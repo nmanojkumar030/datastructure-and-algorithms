@@ -3,22 +3,21 @@ package pattern.slidingwindow;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
+import static org.junit.Assert.*;
 
 public class TestAverageOfSubArrayOfSizeK {
 
     @Test
-    public void testFindAverage() {
+    public void testFindAverage_usingSlidingWindow1() {
         AverageOfSubArrayOfSizeK averageOfSubArrayOfSizeK = new AverageOfSubArrayOfSizeK();
-        double[] result = averageOfSubArrayOfSizeK.findAverageUsingBruteForce(new int[]{1, 3, 2, 6, -1, 4, 1, 8, 2}, 5);
-        Assert.assertArrayEquals(new double[]{2.2, 2.8, 2.4, 3.6, 2.8}, result, 0);
+        double[] result = averageOfSubArrayOfSizeK.findAverageUsingSlidingWindow(new int[]{1, 3, 2, 6, -1, 4, 1, 8, 2}, 5);
+        assertArrayEquals(new double[]{2.2, 2.8, 2.4, 3.6, 2.8}, result, 0);
     }
 
     @Test
-    public void testFindAverage_usingSlidingWindow() {
+    public void testFindAverage_usingSlidingWindow2() {
         AverageOfSubArrayOfSizeK averageOfSubArrayOfSizeK = new AverageOfSubArrayOfSizeK();
         double[] result = averageOfSubArrayOfSizeK.findAverageUsingSlidingWindow(new int[]{1, 3, 2, 6, -1, 4, 1, 8, 2}, 5);
-        Assert.assertArrayEquals(new double[]{2.2, 2.8, 2.4, 3.6, 2.8}, result, 0);
+        assertArrayEquals(new double[]{2.2, 2.8, 2.4, 3.6, 2.8}, result, 0);
     }
 }
