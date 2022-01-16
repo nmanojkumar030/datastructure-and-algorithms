@@ -1,83 +1,48 @@
-/**
- *
- */
+
 package stack;
 
-/**
- * @author mnanjundegowda
- *
- */
-public class StackWithLinkedListImpl {
+public class StackWithLinkedListImpl<E> {
 
-	private StackNode top;
+    private StackNode<E> top;
+    private int length;
 
-	private int length;
+    public void push(E x) throws Exception {
+        StackNode<E> node = new StackNode<>(x);
+        node.nextRef = top;
+        top = node;
+        length++;
+    }
 
-	/**
-	 * StackNode
-	 *
-	 * @author mnanjundegowda
-	 *
-	 */
-	private class StackNode {
+    public E pop() throws Exception {
+        if (top == null) {
+            throw new Exception("Stack is Empty");
+        }
+        E x = top.data;
+        top = top.nextRef;
+        length--;
+        return x;
+    }
 
-		private int data;
+    public E top() throws Exception {
+        if (isEmpty()) {
+            throw new Exception("Stack is Empty");
+        }
+        return top.data;
+    }
 
-		private StackNode nextRef;
+    public boolean isEmpty() {
+        return length == 0 ? true : false;
+    }
 
-		public StackNode(int data) {
-			this.data = data;
-		}
-	}
+    private class StackNode<E> {
 
-	/**
-	 * PUSH operation
-	 *
-	 * @param x
-	 * @throws Exception
-	 */
-	public void push(int x) throws Exception {
-		StackNode node = new StackNode(x);
-		node.nextRef = top;
-		top = node;
-		length++;
-	}
+        private E data;
 
-	/**
-	 * POP operation
-	 *
-	 * @return
-	 * @throws Exception
-	 */
-	public int pop() throws Exception {
-		if (top == null) {
-			throw new Exception("Stack is Empty");
-		}
-		int x = top.data;
-		top = top.nextRef;
-		length--;
-		return x;
-	}
+        private StackNode nextRef;
 
-	/**
-	 * top
-	 *
-	 * @return
-	 * @throws Exception
-	 */
-	public int top() throws Exception {
-		if (isEmpty()) {
-			throw new Exception("Stack is Empty");
-		}
-		return top.data;
-	}
+        public StackNode(E data) {
+            this.data = data;
+        }
+    }
 
-	/**
-	 * isEmpty
-	 *
-	 * @return
-	 */
-	public boolean isEmpty() {
-		return length == 0 ? true : false;
-	}
 }

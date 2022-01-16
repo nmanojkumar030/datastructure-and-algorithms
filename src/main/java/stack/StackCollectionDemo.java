@@ -5,17 +5,9 @@ package stack;
 
 import java.util.Stack;
 
-/**
- * @author mnanjundegowda
- *
- */
-public class StackDemo {
+public class StackCollectionDemo {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Stack<String> stack = new Stack<String>();
 		stack.push("a");
 		stack.push("b");
