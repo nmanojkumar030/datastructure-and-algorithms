@@ -1,28 +1,29 @@
-/**
- *
- */
+
 package linkedlist;
 
-import linkedlist.LinkedList;
 
-/**
- * @author mnanjundegowda
- *
- */
+import org.junit.Assert;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class TestLinkedList {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		//Node node = new Node(0, null);
+    @Test
+    public void testCreateNewLinkedList() {
+        LinkedList<String> linkedList = new LinkedList<String>();
+        linkedList.insertAtEnd("Hello");
+        linkedList.insertAtEnd("World");
 
-		//linkedlist.LinkedList.Node node1 = new Node(0, null);
+        assertEquals(2, linkedList.getLength());
+    }
 
-		LinkedList linkedList = new LinkedList();
-
-		LinkedList.Node node2 = linkedList.new Node(0, null);
-
-	}
+    @Test
+    public void testLinkedListInsertAtBegin() {
+        LinkedList<String> linkedList = new LinkedList<String>();
+        linkedList.insertAtEnd("World");
+        linkedList.insertAtBegin("Hello");
+        assertEquals(2, linkedList.getLength());
+    }
 
 }

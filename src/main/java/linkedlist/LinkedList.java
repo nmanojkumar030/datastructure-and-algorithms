@@ -1,78 +1,24 @@
-/**
- *
- */
+
 package linkedlist;
 
-/**
- * @author mnanjundegowda
- *
- */
-public class LinkedList {
+public class LinkedList<E> {
 
     private Node head = null;
-
     private int length = 0;
 
-    /**
-     * @return the head
-     */
-    public Node getHead() {
-        return head;
-    }
-
-    /**
-     * @param head
-     *            the head to set
-     */
-    public void setHead(Node head) {
-        this.head = head;
-    }
-
-    /**
-     * @return the length
-     */
     public int getLength() {
         return length;
     }
 
-    /**
-     * @param length
-     *            the length to set
-     */
-    public void setLength(int length) {
-        this.length = length;
-    }
-
-    /**
-     * To get Length of linked list
-     *
-     * @param head
-     * @return
-     */
-    public int getListLength(Node head) {
-        int length = 0;
-
-        Node currentNode = head;
-        while (currentNode != null) {
-            length++;
-            currentNode = currentNode.getNextPointer();
-        }
-        return length;
-    }
-
-    /**
-     * Insert node at the begining of the list
-     *
-     * @param node
-     */
-    public void insertAtBegin(Node node) {
+    public void insertAtBegin(E element) {
+        Node<E> node = new Node<>(element);
         node.setNextPointer(head);
         head = node;
         length++;
     }
 
-    public void insertAtEnd(Node node) {
-
+    public void insertAtEnd(E element) {
+        Node<E> node = new Node<>(element);
         if (head == null) {
             head = node;
         } else {
@@ -80,20 +26,13 @@ public class LinkedList {
             while (temp.getNextPointer() != null) {
                 temp = temp.getNextPointer();
             }
-
             temp.setNextPointer(node);
-            node.setNextPointer(null);
         }
         length++;
     }
 
-    /**
-     * insertAtPosition
-     *
-     * @param node
-     * @param pos
-     */
-    public void insertAtPosition(Node node, int pos) {
+    public void insertAtPosition(E element, int pos) {
+        Node<E> node = new Node<>(element);
         if (pos < 0) {
             node.setNextPointer(head);
             head = node;
@@ -106,7 +45,6 @@ public class LinkedList {
                     temp = temp.getNextPointer();
                 }
                 temp.setNextPointer(node);
-                node.setNextPointer(null);
                 length++;
             } else {
                 Node temp = head;
@@ -130,55 +68,34 @@ public class LinkedList {
 
     /**
      * Node of Linked List
-     *
-     * @author mnanjundegowda
-     *
      */
-    class Node {
-
-        private int data;
-
+    private static class Node<E> {
+        private E data;
         private Node nextPointer;
 
-        /**
-         * @param data
-         * @param nextPointer
-         */
-        public Node(int data, Node nextPointer) {
+        public Node(E data) {
+            this.data = data;
+        }
+
+        public Node(E data, Node nextPointer) {
             this.data = data;
             this.nextPointer = nextPointer;
         }
 
-        /**
-         * @param data
-         *            the data to set
-         */
-        public void setData(int data) {
+        public void setData(E data) {
             this.data = data;
         }
 
-        /**
-         * @param nextPointer
-         *            the nextPointer to set
-         */
         public void setNextPointer(Node nextPointer) {
             this.nextPointer = nextPointer;
         }
 
-        /**
-         * @return the data
-         */
-        public int getData() {
+        public E getData() {
             return data;
         }
 
-        /**
-         * @return the nextPointer
-         */
         public Node getNextPointer() {
             return nextPointer;
         }
     }
 }
-
-
