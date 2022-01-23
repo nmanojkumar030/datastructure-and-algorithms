@@ -10,12 +10,12 @@ public class TestReverseLinkedList {
     @Test
     public void testReverse() {
         ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
-        LinkedListNode head = new LinkedListNode(2);
-        head.setNext(new LinkedListNode(4));
-        head.getNext().setNext(new LinkedListNode(6));
-        head.getNext().getNext().setNext(new LinkedListNode(8));
-        head.getNext().getNext().getNext().setNext(new LinkedListNode(10));
-        LinkedListNode reverseHead = reverseLinkedList.reverse(head);
+        ReverseLinkedList.LinkedListNode head = new ReverseLinkedList.LinkedListNode(2);
+        head.setNext(new ReverseLinkedList.LinkedListNode(4));
+        head.getNext().setNext(new ReverseLinkedList.LinkedListNode(6));
+        head.getNext().getNext().setNext(new ReverseLinkedList.LinkedListNode(8));
+        head.getNext().getNext().getNext().setNext(new ReverseLinkedList.LinkedListNode(10));
+        ReverseLinkedList.LinkedListNode reverseHead = reverseLinkedList.reverse(head);
 
         assertEquals(10, reverseHead.getData());
         assertEquals(8, reverseHead.getNext().getData());
