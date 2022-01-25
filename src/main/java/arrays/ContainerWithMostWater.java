@@ -4,7 +4,12 @@ package arrays;
 import static java.lang.Math.max;
 import static java.lang.Math.min;
 
+/**
+ * https://leetcode.com/problems/container-with-most-water/
+ */
 public class ContainerWithMostWater {
+
+    // Time Complexity O(N)
     public int maxArea(int[] height) {
         int maxArea = 0;
         int startPointer = 0;
@@ -21,6 +26,7 @@ public class ContainerWithMostWater {
         return maxArea;
     }
 
+    // Brute Force Method O(N2)
     public int maxArea1(int[] height) {
         int maxArea = 0;
         for (int i = 0; i < height.length; i++) {

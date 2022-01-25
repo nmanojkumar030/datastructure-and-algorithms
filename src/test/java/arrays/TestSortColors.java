@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
-public class SortColorsTest {
+public class TestSortColors {
 
     @Test
     public void testSortColors1() throws Exception {

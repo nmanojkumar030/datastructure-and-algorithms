@@ -6,13 +6,9 @@ import java.util.List;
 
 public class MaxNumber {
 
-    /**
-     * @param args
-     * @throws IOException
-     */
     public static void main(String[] args) throws IOException {
 
-        List<Integer> integers = Arrays.asList(548, 560, 59, 70);
+        List<Integer> integers = Arrays.asList(948, 560, 590, 700);
         int max = 0;
         for (int number : integers) {
             int nthDigit = returnNthDigit(number);

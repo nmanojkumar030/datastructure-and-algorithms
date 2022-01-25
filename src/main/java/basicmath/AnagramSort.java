@@ -4,9 +4,6 @@ import java.util.Arrays;
 
 public class AnagramSort {
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
         String string1 = "geeksforgeeks";
         String string2 = "forgeeksgeeks";

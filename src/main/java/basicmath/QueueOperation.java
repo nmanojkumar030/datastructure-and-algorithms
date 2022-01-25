@@ -9,10 +9,6 @@ import java.util.StringTokenizer;
 
 public class QueueOperation {
 
-    /**
-     * @param args
-     * @throws IOException
-     */
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String line1 = br.readLine();
@@ -47,7 +43,5 @@ public class QueueOperation {
         for (Integer integer : queue) {
             System.out.println(integer);
         }
-
     }
-
 }
