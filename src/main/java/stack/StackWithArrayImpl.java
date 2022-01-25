@@ -4,13 +4,13 @@ package stack;
 /**
  * Stack based on Array
  */
-public class StackWithLinkedListImplImpl<E> {
+public class StackWithArrayImpl<E> {
 
     private E[] data;
     private int top = -1;
     private final int MAX_CAPACITY = 10;
 
-    public StackWithLinkedListImplImpl() {
+    public StackWithArrayImpl() {
         data = (E[]) new Object[10];
     }
 

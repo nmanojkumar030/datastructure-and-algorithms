@@ -6,6 +6,7 @@ public class ReverseLinkedList {
         LinkedListNode currentNode = head;
         LinkedListNode previousNode = null;
         LinkedListNode nextNode = null;
+
         while (currentNode != null) {
             nextNode = currentNode.getNext();
             currentNode.setNext(previousNode);

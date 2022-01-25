@@ -46,6 +46,4 @@ public class MaximumOfSubArrayOfSizeK {
         }
         return maxSum;
     }
-
-
 }

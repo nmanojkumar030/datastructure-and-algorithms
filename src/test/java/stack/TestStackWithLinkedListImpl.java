@@ -8,7 +8,7 @@ public class TestStackWithLinkedListImpl {
 
     @Test
     public void testStack() throws Exception {
-        StackWithLinkedListImplImpl stackWithLinkedListImpl = new StackWithLinkedListImplImpl();
+        StackWithArrayImpl stackWithLinkedListImpl = new StackWithArrayImpl();
         stackWithLinkedListImpl.push("a");
         stackWithLinkedListImpl.push("b");
         stackWithLinkedListImpl.push("c");
