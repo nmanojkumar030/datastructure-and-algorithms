@@ -1,6 +1,5 @@
 package pattern.magicallookups;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -27,8 +26,7 @@ public class TestBooksWithAuthors {
         books.add(new BooksWithAuthors.Book("3", "Hop on Pop"));
         books.add(new BooksWithAuthors.Book("3", "Green Eggs and Ham"));
 
-        Map<String, String> booksAuthors = booksWithAuthors.connect(books, authors);
+        Map<String, String> booksAuthors = booksWithAuthors.connectHashTable(books, authors);
         assertEquals(6, booksAuthors.size());
-
     }
 }
