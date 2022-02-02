@@ -18,12 +18,13 @@ public class MedianOfAStream {
 
     // Time Complexity - O(log N)
     public void insertNum(int num) {
-        if (maxHeap.isEmpty() || maxHeap.peek() >= num) {
+        if (maxHeap.isEmpty() || num <= maxHeap.peek()) {
             maxHeap.offer(num);
         } else {
             minHeap.offer(num);
         }
 
+        // Balancing maxHeap and minHeap
         if (maxHeap.size() > (minHeap.size() + 1)) {
             minHeap.offer(maxHeap.poll());
         } else if (maxHeap.size() < minHeap.size()) {
