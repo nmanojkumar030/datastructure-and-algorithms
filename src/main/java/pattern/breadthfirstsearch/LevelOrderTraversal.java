@@ -28,9 +28,9 @@ public class LevelOrderTraversal {
         return result;
     }
 
-    private void addNodeToQueue(Queue<TreeNode> levelQueue, TreeNode left) {
-        if (null != left) {
-            levelQueue.offer(left);
+    private void addNodeToQueue(Queue<TreeNode> levelQueue, TreeNode treeNode) {
+        if (null != treeNode) {
+            levelQueue.offer(treeNode);
         }
     }
 }

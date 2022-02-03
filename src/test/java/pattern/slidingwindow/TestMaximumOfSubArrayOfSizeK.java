@@ -1,7 +1,8 @@
 package pattern.slidingwindow;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestMaximumOfSubArrayOfSizeK {
 
@@ -9,13 +10,13 @@ public class TestMaximumOfSubArrayOfSizeK {
     public void testFindMaxSum() {
         MaximumOfSubArrayOfSizeK maximumOfSubArrayOfSizeK = new MaximumOfSubArrayOfSizeK();
         int result = maximumOfSubArrayOfSizeK.findMaxSumOfSubArray(new int[]{2, 1, 5, 1, 3, 2}, 3);
-        Assert.assertEquals(9, result);
+        assertEquals(9, result);
     }
 
     @Test
     public void testFindMaxSum2() {
         MaximumOfSubArrayOfSizeK maximumOfSubArrayOfSizeK = new MaximumOfSubArrayOfSizeK();
         int result = maximumOfSubArrayOfSizeK.findMaxSumOfSubArray(new int[]{2, 3, 4, 1, 5}, 2);
-        Assert.assertEquals(7, result);
+        assertEquals(7, result);
     }
 }

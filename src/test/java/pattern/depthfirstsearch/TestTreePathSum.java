@@ -1,8 +1,9 @@
 package pattern.depthfirstsearch;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestTreePathSum {
 
@@ -16,12 +17,12 @@ public class TestTreePathSum {
     @Test
     public void testHasPath() {
         TreePathSum treePathSum = new TreePathSum();
-        TreeNode root = new TreeNode(12);
-        root.left = new TreeNode(7);
-        root.right = new TreeNode(1);
-        root.left.left = new TreeNode(9);
-        root.right.left = new TreeNode(10);
-        root.right.right = new TreeNode(5);
+        TreePathSum.TreeNode root = new TreePathSum.TreeNode(12);
+        root.left = new TreePathSum.TreeNode(7);
+        root.right = new TreePathSum.TreeNode(1);
+        root.left.left = new TreePathSum.TreeNode(9);
+        root.right.left = new TreePathSum.TreeNode(10);
+        root.right.right = new TreePathSum.TreeNode(5);
 
         boolean result = treePathSum.hasPath(root, 23);
         assertTrue(result);

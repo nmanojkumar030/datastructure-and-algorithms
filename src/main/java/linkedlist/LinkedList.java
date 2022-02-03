@@ -51,6 +51,7 @@ public class LinkedList<E> {
                 int index = 0;
                 while (temp.getNextPointer() != null && pos != index) {
                     temp = temp.getNextPointer();
+                    index++;
                 }
                 node.setNextPointer(temp.getNextPointer());
                 temp.setNextPointer(node);

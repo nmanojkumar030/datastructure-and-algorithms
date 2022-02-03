@@ -13,14 +13,15 @@ public class TreePathSum {
 
         return hasPath(root.left, targetSum - root.data) || hasPath(root.right, targetSum - root.data);
     }
-}
 
-class TreeNode {
-    int data;
-    TreeNode left;
-    TreeNode right;
+    static class TreeNode {
+        int data;
+        TreeNode left;
+        TreeNode right;
 
-    public TreeNode(int data) {
-        this.data = data;
+        public TreeNode(int data) {
+            this.data = data;
+        }
     }
 }
+

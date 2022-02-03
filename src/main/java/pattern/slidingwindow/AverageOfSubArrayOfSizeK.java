@@ -18,13 +18,13 @@ public class AverageOfSubArrayOfSizeK {
     // Sliding Window O(N)
     public double[] findAverageUsingSlidingWindow(int[] inputArray, int subArrayWidth) {
         double[] result = new double[inputArray.length - subArrayWidth + 1];
-        double windowSum = 0;
+        double slidingWindowSum = 0;
         int windowStart = 0;
         for (int windowEnd = 0; windowEnd < inputArray.length; windowEnd++) {
-            windowSum += inputArray[windowEnd];
+            slidingWindowSum += inputArray[windowEnd];
             if ((windowEnd - windowStart + 1) >= subArrayWidth) {
-                result[windowStart] = windowSum / subArrayWidth;
-                windowSum -= inputArray[windowStart];
+                result[windowStart] = slidingWindowSum / subArrayWidth;
+                slidingWindowSum -= inputArray[windowStart];
                 windowStart++;
             }
         }

@@ -7,12 +7,7 @@ public class CoinGame {
             return currentPlayer;
         }
 
-        String nextPlayer = null;
-        if (currentPlayer.equalsIgnoreCase("you")) {
-            nextPlayer = "them";
-        } else if (currentPlayer.equalsIgnoreCase("them")) {
-            nextPlayer = "you";
-        }
+        String nextPlayer = switchPlayersTurn(currentPlayer);
 
         if (gameWinner(numberOfCoins - 1, nextPlayer).equalsIgnoreCase("you")
                 || gameWinner(numberOfCoins - 2, nextPlayer).equalsIgnoreCase("you")) {
@@ -20,5 +15,15 @@ public class CoinGame {
         } else {
             return "them";
         }
+    }
+
+    private String switchPlayersTurn(String currentPlayer) {
+        String nextPlayer = null;
+        if (currentPlayer.equalsIgnoreCase("you")) {
+            nextPlayer = "them";
+        } else if (currentPlayer.equalsIgnoreCase("them")) {
+            nextPlayer = "you";
+        }
+        return nextPlayer;
     }
 }
