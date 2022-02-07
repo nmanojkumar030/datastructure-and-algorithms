@@ -3,6 +3,7 @@ package pattern.fastandslowpointer;
 import java.util.HashMap;
 import java.util.Map;
 
+// Based on Floyd's cycle finding algorithm
 public class LinkedListCycle {
 
     // Time Complexity O(N), Space Complexity O(1)

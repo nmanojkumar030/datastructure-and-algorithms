@@ -1,7 +1,9 @@
 package pattern.fastandslowpointer;
 
+// Based on Floyd's cycle finding algorithm
 public class LinkedListCycleStart {
 
+    // Time Complexity - O(N), Space Complexity (1)
     public Node findCycleStart(Node head) {
         int cycleLength = 0;
         Node fastPointer = head;
