@@ -1,6 +1,7 @@
-package arrays;
+package pattern.twopointers;
 
 import org.junit.jupiter.api.Test;
+import pattern.twopointers.RemoveDuplicates;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

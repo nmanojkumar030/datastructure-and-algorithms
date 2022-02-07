@@ -1,4 +1,4 @@
-package arrays;
+package pattern.twopointers;
 
 /**
  * https://leetcode.com/problems/remove-element/
@@ -28,12 +28,13 @@ package arrays;
  * It does not matter what you leave beyond the returned k (hence they are underscores).
  */
 public class RemoveElement {
+    // Time Complexity - O(N)
+    // Space Complexity - O(1)
     public int removeElement(int[] nums, int val) {
         int uniqueElementIndex = 0;
         for (int i = 0; i < nums.length; i++) {
             if (val != nums[i]) {
-                nums[uniqueElementIndex] = nums[i];
-                uniqueElementIndex++;
+                nums[uniqueElementIndex++] = nums[i];
             }
         }
         return uniqueElementIndex;

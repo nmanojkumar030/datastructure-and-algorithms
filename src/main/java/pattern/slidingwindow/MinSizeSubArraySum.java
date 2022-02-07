@@ -23,6 +23,9 @@ package pattern.slidingwindow;
  */
 public class MinSizeSubArraySum {
 
+    // Time Complexity - O(N)
+    // Outer loop - O(N), inner loop O(N), So O(N+ N) equivalent to O(N)
+    // Space Complexity - O(1)
     public int findMinSubArray(int[] inputArray, int targetSum) {
         int minLength = Integer.MAX_VALUE;
         int windowSum = 0;
