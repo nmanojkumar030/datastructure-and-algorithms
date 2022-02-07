@@ -6,6 +6,7 @@ import java.util.List;
 
 public class InsertInterval {
 
+    // Time Complexity - O(N), Space Complexity - O(N)
     public List<Interval> insert(List<Interval> intervalList, Interval intervalToInsert) {
         if (null == intervalList || intervalList.isEmpty()) {
             return Arrays.asList(intervalToInsert);
