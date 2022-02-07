@@ -47,12 +47,5 @@ public class LinkedListCycleStart {
         return fastPointer;
     }
 
-    static class Node {
-        int data;
-        Node nextPointer;
 
-        public Node(int data) {
-            this.data = data;
-        }
-    }
 }

@@ -9,11 +9,11 @@ public class TestLinkedListCycle {
     @Test
     public void testLinkedListCycle() {
         LinkedListCycle linkedListCycle = new LinkedListCycle();
-        LinkedListCycle.Node head = linkedListCycle.new Node(1);
-        head.nextPointer = linkedListCycle.new Node(2);
-        head.nextPointer.nextPointer = linkedListCycle.new Node(3);
-        head.nextPointer.nextPointer.nextPointer = linkedListCycle.new Node(4);
-        head.nextPointer.nextPointer.nextPointer.nextPointer = linkedListCycle.new Node(5);
+        Node head = new Node(1);
+        head.nextPointer = new Node(2);
+        head.nextPointer.nextPointer = new Node(3);
+        head.nextPointer.nextPointer.nextPointer = new Node(4);
+        head.nextPointer.nextPointer.nextPointer.nextPointer = new Node(5);
 
         head.nextPointer.nextPointer.nextPointer.nextPointer.nextPointer = head.nextPointer.nextPointer;
 
@@ -25,11 +25,11 @@ public class TestLinkedListCycle {
     @Test
     public void testLinkedListCycleWithHashMap() {
         LinkedListCycle linkedListCycle = new LinkedListCycle();
-        LinkedListCycle.Node head = linkedListCycle.new Node(1);
-        head.nextPointer = linkedListCycle.new Node(2);
-        head.nextPointer.nextPointer = linkedListCycle.new Node(3);
-        head.nextPointer.nextPointer.nextPointer = linkedListCycle.new Node(4);
-        head.nextPointer.nextPointer.nextPointer.nextPointer = linkedListCycle.new Node(5);
+        Node head = new Node(1);
+        head.nextPointer = new Node(2);
+        head.nextPointer.nextPointer = new Node(3);
+        head.nextPointer.nextPointer.nextPointer = new Node(4);
+        head.nextPointer.nextPointer.nextPointer.nextPointer = new Node(5);
 
         head.nextPointer.nextPointer.nextPointer.nextPointer.nextPointer = head.nextPointer.nextPointer;
 
@@ -40,11 +40,11 @@ public class TestLinkedListCycle {
     @Test
     public void testLinkedListCycleLength() {
         LinkedListCycle linkedListCycle = new LinkedListCycle();
-        LinkedListCycle.Node head = linkedListCycle.new Node(1);
-        head.nextPointer = linkedListCycle.new Node(2);
-        head.nextPointer.nextPointer = linkedListCycle.new Node(3);
-        head.nextPointer.nextPointer.nextPointer = linkedListCycle.new Node(4);
-        head.nextPointer.nextPointer.nextPointer.nextPointer = linkedListCycle.new Node(5);
+        Node head = new Node(1);
+        head.nextPointer = new Node(2);
+        head.nextPointer.nextPointer = new Node(3);
+        head.nextPointer.nextPointer.nextPointer = new Node(4);
+        head.nextPointer.nextPointer.nextPointer.nextPointer = new Node(5);
 
         head.nextPointer.nextPointer.nextPointer.nextPointer.nextPointer = head.nextPointer.nextPointer;
 

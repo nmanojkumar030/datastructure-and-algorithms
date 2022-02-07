@@ -53,15 +53,6 @@ public class LinkedListCycle {
         return cycleLength;
     }
 
-    class Node {
-        int data;
-        Node nextPointer;
-
-        public Node(int data) {
-            this.data = data;
-        }
-    }
-
     // Time Complexity O(N), Space Complexity O(N)
     public boolean hasCycleWithHashMap(Node head) {
         boolean result = false;

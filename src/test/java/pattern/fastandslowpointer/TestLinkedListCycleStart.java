@@ -10,15 +10,15 @@ public class TestLinkedListCycleStart {
     @Test
     public void testLinkedCycleStart() {
         LinkedListCycleStart linkedListCycleStart = new LinkedListCycleStart();
-        LinkedListCycleStart.Node head = new LinkedListCycleStart.Node(1);
-        head.nextPointer = new LinkedListCycleStart.Node(2);
-        head.nextPointer.nextPointer = new LinkedListCycleStart.Node(3);
-        head.nextPointer.nextPointer.nextPointer = new LinkedListCycleStart.Node(4);
-        head.nextPointer.nextPointer.nextPointer.nextPointer = new LinkedListCycleStart.Node(5);
+        Node head = new Node(1);
+        head.nextPointer = new Node(2);
+        head.nextPointer.nextPointer = new Node(3);
+        head.nextPointer.nextPointer.nextPointer = new Node(4);
+        head.nextPointer.nextPointer.nextPointer.nextPointer = new Node(5);
 
         head.nextPointer.nextPointer.nextPointer.nextPointer.nextPointer = head.nextPointer.nextPointer;
 
-        LinkedListCycleStart.Node result = linkedListCycleStart.findCycleStart(head);
+        Node result = linkedListCycleStart.findCycleStart(head);
         assertEquals(3, result.data);
     }
 }
