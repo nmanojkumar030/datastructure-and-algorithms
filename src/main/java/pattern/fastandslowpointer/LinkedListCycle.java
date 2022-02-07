@@ -23,34 +23,17 @@ public class LinkedListCycle {
         return result;
     }
 
-    // Time Complexity O(N), Space Complexity O(N)
-    public boolean hasCycleWithHashMap(Node head) {
-        boolean result = false;
-        Map<Node, Integer> map = new HashMap<>();
-        Node temp = head.nextPointer;
-        while (null != temp) {
-            if (map.containsKey(temp)) {
-                result = true;
-                break;
-            }
-            map.put(temp, temp.data);
-            temp = temp.nextPointer;
-        }
-        return result;
-    }
-
+    // Time Complexity - O(N), Space Complexity - O(1)
     public int findCycleLength(Node head) {
         int cycleLength = 0;
         Node fastPointer = head;
         Node slowPointer = head;
-        Node lengthPointer = null;
 
         while (null != slowPointer && null != fastPointer.nextPointer) {
             fastPointer = fastPointer.nextPointer.nextPointer;
             slowPointer = slowPointer.nextPointer;
 
             if (slowPointer == fastPointer) {
-                lengthPointer = slowPointer;
                 cycleLength = findLength(slowPointer);
                 break;
             }
@@ -76,6 +59,22 @@ public class LinkedListCycle {
         public Node(int data) {
             this.data = data;
         }
+    }
+
+    // Time Complexity O(N), Space Complexity O(N)
+    public boolean hasCycleWithHashMap(Node head) {
+        boolean result = false;
+        Map<Node, Integer> map = new HashMap<>();
+        Node temp = head.nextPointer;
+        while (null != temp) {
+            if (map.containsKey(temp)) {
+                result = true;
+                break;
+            }
+            map.put(temp, temp.data);
+            temp = temp.nextPointer;
+        }
+        return result;
     }
 }
 
