@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-public class TestAverageOfSubArrayOfSizeK {
+public class AverageOfSubArrayOfSizeKTest {
 
     @Test
     public void testFindAverage_usingSlidingWindow1() {

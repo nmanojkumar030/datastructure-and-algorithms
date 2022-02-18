@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestPairWithTargetSum {
+public class PairWithTargetSumTest {
 
     @Test
     public void testSearch() {

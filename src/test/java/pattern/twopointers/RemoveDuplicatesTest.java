@@ -5,7 +5,7 @@ import pattern.twopointers.RemoveDuplicates;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestRemoveDuplicates {
+public class RemoveDuplicatesTest {
 
     @Test
     public void testRemoveDuplicates1() {

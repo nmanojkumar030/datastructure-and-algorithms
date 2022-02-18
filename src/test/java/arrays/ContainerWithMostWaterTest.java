@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestContainerWithMostWater {
+public class ContainerWithMostWaterTest {
 
     @Test
     public void testMaxArea1() {

@@ -5,7 +5,7 @@ import pattern.twopointers.RemoveElement;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestRemoveElement {
+public class RemoveElementTest {
 
     @Test
     public void testRemoveElement1() {

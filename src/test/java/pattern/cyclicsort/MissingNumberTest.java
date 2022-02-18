@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestMissingNumber {
+public class MissingNumberTest {
 
     @Test
     public void testMissingNumber1() {

@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * https://leetcode.com/problems/two-sum/
  */
-public class TestTwoSum {
+public class TwoSumTest {
 
     @Test
     public void testTwoSum1() throws Exception {

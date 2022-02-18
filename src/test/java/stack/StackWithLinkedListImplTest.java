@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestStackWithLinkedListImpl {
+public class StackWithLinkedListImplTest {
 
     @Test
     public void testStack() throws Exception {
