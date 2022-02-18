@@ -1,5 +1,10 @@
 package pattern.reverselinkedlist;
 
+/**
+ * https://www.educative.io/courses/grokking-the-coding-interview/3wENz1N4WW9
+ * Given the head of a Singly LinkedList, reverse the LinkedList.
+ * Write a function to return the new head of the reversed LinkedList.
+ */
 public class ReverseLinkedList {
 
     public LinkedListNode reverse(LinkedListNode head) {
@@ -14,27 +19,6 @@ public class ReverseLinkedList {
             currentNode = nextNode;
         }
         return previousNode;
-    }
-
-    static class LinkedListNode {
-        private int data;
-        private LinkedListNode next;
-
-        public int getData() {
-            return data;
-        }
-
-        public LinkedListNode getNext() {
-            return next;
-        }
-
-        public void setNext(LinkedListNode next) {
-            this.next = next;
-        }
-
-        public LinkedListNode(int data) {
-            this.data = data;
-        }
     }
 }
 
