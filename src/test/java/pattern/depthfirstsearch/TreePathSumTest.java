@@ -17,12 +17,12 @@ public class TreePathSumTest {
     @Test
     public void testHasPath() {
         TreePathSum treePathSum = new TreePathSum();
-        TreePathSum.TreeNode root = new TreePathSum.TreeNode(12);
-        root.left = new TreePathSum.TreeNode(7);
-        root.right = new TreePathSum.TreeNode(1);
-        root.left.left = new TreePathSum.TreeNode(9);
-        root.right.left = new TreePathSum.TreeNode(10);
-        root.right.right = new TreePathSum.TreeNode(5);
+        TreeNode root = new TreeNode(12);
+        root.left = new TreeNode(7);
+        root.right = new TreeNode(1);
+        root.left.left = new TreeNode(9);
+        root.right.left = new TreeNode(10);
+        root.right.right = new TreeNode(5);
 
         boolean result = treePathSum.hasPath(root, 23);
         assertTrue(result);

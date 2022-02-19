@@ -1,7 +1,6 @@
 package pattern.depthfirstsearch;
 
 public class TreePathSum {
-
     public boolean hasPath(TreeNode root, int targetSum) {
         if (null == root) {
             return false;
@@ -12,16 +11,6 @@ public class TreePathSum {
         }
 
         return hasPath(root.left, targetSum - root.data) || hasPath(root.right, targetSum - root.data);
-    }
-
-    static class TreeNode {
-        int data;
-        TreeNode left;
-        TreeNode right;
-
-        public TreeNode(int data) {
-            this.data = data;
-        }
     }
 }
 
