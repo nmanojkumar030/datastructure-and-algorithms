@@ -1,7 +1,6 @@
 package pattern.twopointers;
 
 import org.junit.jupiter.api.Test;
-import pattern.twopointers.RemoveElement;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -11,7 +10,7 @@ public class RemoveElementTest {
     public void testRemoveElement1() {
         int[] nums = new int[]{3, 2, 2, 3};
         RemoveElement element = new RemoveElement();
-        int result = element.removeElement(nums, 3);
+        int result = element.remove(nums, 3);
         assertEquals(2, result);
     }
 
@@ -19,7 +18,7 @@ public class RemoveElementTest {
     public void testRemoveElement2() {
         int[] nums = new int[]{0, 1, 2, 2, 3, 0, 4, 2};
         RemoveElement element = new RemoveElement();
-        int result = element.removeElement(nums, 2);
+        int result = element.remove(nums, 2);
         assertEquals(5, result);
     }
 }

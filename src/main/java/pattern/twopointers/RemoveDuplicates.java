@@ -33,7 +33,7 @@ public class RemoveDuplicates {
 
     // Time Complexity - O(N)
     // Space Complexity - O(1)
-    public int removeDuplicates(int[] nums) {
+    public int remove(int[] nums) {
         int uniqueElementIndex = 0;
         for (int i = 1; i < nums.length; i++) {
             if (nums[uniqueElementIndex] != nums[i]) {
@@ -43,7 +43,7 @@ public class RemoveDuplicates {
         return uniqueElementIndex + 1;
     }
 
-    public int removeDuplicates1(int[] nums) {
+    public int remove1(int[] nums) {
         Set<Integer> contextSet = new TreeSet<>();
         for (int i = 0; i < nums.length; i++) {
             contextSet.add(nums[i]);

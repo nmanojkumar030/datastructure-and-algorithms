@@ -3,7 +3,12 @@ package pattern.fastandslowpointer;
 import java.util.HashMap;
 import java.util.Map;
 
-// Based on Floyd's cycle finding algorithm
+/**
+ * Problem Statement#
+ * Given the head of a Singly LinkedList, write a function to determine if the LinkedList has a cycle in it or not.
+ * <p>
+ * Based on Floyd's cycle finding algorithm
+ */
 public class LinkedListCycle {
 
     // Time Complexity O(N), Space Complexity O(1)
@@ -12,7 +17,7 @@ public class LinkedListCycle {
         Node fastPointer = head;
         Node slowPointer = head;
 
-        while (null != slowPointer && null != fastPointer.nextPointer) {
+        while (null != fastPointer && null != fastPointer.nextPointer) {
             fastPointer = fastPointer.nextPointer.nextPointer;
             slowPointer = slowPointer.nextPointer;
 
@@ -30,7 +35,7 @@ public class LinkedListCycle {
         Node fastPointer = head;
         Node slowPointer = head;
 
-        while (null != slowPointer && null != fastPointer.nextPointer) {
+        while (null != fastPointer && null != fastPointer.nextPointer) {
             fastPointer = fastPointer.nextPointer.nextPointer;
             slowPointer = slowPointer.nextPointer;
 

@@ -9,7 +9,7 @@ public class LinkedListCycleStart {
         Node fastPointer = head;
         Node slowPointer = head;
 
-        while (null != slowPointer && null != fastPointer.nextPointer) {
+        while (null != fastPointer && null != fastPointer.nextPointer) {
             fastPointer = fastPointer.nextPointer.nextPointer;
             slowPointer = slowPointer.nextPointer;
 

@@ -30,7 +30,7 @@ package pattern.twopointers;
 public class RemoveElement {
     // Time Complexity - O(N)
     // Space Complexity - O(1)
-    public int removeElement(int[] nums, int val) {
+    public int remove(int[] nums, int val) {
         int uniqueElementIndex = 0;
         for (int i = 0; i < nums.length; i++) {
             if (val != nums[i]) {
