@@ -1,6 +1,9 @@
 package pattern.breadthfirstsearch;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 public class LevelOrderTraversal {
 
@@ -14,7 +17,7 @@ public class LevelOrderTraversal {
         Queue<TreeNode> levelQueue = new LinkedList<>();
         levelQueue.offer(root);
 
-        while (!levelQueue.isEmpty()) {
+        while (isLevelQueueNotEmpty(levelQueue)) {
             List<TreeNode> levelList = new ArrayList<>(levelQueue.size());
             int levelSize = levelQueue.size();
             for (int i = 0; i < levelSize; i++) {
@@ -26,6 +29,10 @@ public class LevelOrderTraversal {
             result.add(levelList);
         }
         return result;
+    }
+
+    private boolean isLevelQueueNotEmpty(Queue<TreeNode> levelQueue) {
+        return !levelQueue.isEmpty();
     }
 
     private void addNodeToQueue(Queue<TreeNode> levelQueue, TreeNode treeNode) {

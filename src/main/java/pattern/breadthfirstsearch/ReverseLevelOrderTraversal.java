@@ -24,7 +24,7 @@ public class ReverseLevelOrderTraversal {
         Queue<TreeNode> levelQueue = new LinkedList<>();
         levelQueue.offer(root);
 
-        while (!levelQueue.isEmpty()) {
+        while (isLevelQueueNotEmpty(levelQueue)) {
             List<TreeNode> levelList = new ArrayList<>(levelQueue.size());
 
             final int size = levelQueue.size();
@@ -37,6 +37,10 @@ public class ReverseLevelOrderTraversal {
             reverseOrderTraverseList.add(0, levelList);
         }
         return reverseOrderTraverseList;
+    }
+
+    private boolean isLevelQueueNotEmpty(Queue<TreeNode> levelQueue) {
+        return !levelQueue.isEmpty();
     }
 
     private void addNodeToQueue(Queue<TreeNode> levelQueue, TreeNode treeNode) {
