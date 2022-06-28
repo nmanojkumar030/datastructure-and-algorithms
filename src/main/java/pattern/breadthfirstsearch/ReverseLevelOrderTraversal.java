@@ -15,7 +15,7 @@ public class ReverseLevelOrderTraversal {
 
     // Time Complexity - O(N), Space Complexity O(N)
     public List<List<TreeNode>> traverse(TreeNode root) {
-        List<List<TreeNode>> reverseOrderTraverseList = new LinkedList<>();
+        List<List<TreeNode>> reverseOrderTraverseList = new LinkedList<>(); // Using Linked List to append the elements at the beginning.
 
         if (root == null) {
             return reverseOrderTraverseList;
