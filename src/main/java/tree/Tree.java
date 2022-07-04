@@ -4,24 +4,16 @@ public class Tree {
 
     private Node root;
 
-    public Node getRoot() {
-        return root;
-    }
-
-    public void setRoot(Node root) {
-        this.root = root;
-    }
-
-    public void findThroughRecursion(int key, Node root) {
-        if (null == root) {
+    public void findThroughRecursion(int key, Node node) {
+        if (null == node) {
             System.out.println("Key not found!!");
         } else {
-            if (root.getData() == key) {
+            if (node.getData() == key) {
                 System.out.println("Key found!!");
-            } else if (root.getData() > key) {
-                findThroughRecursion(key, root.getRight());
-            } else if (root.getData() < key) {
-                findThroughRecursion(key, root.getLeft());
+            } else if (node.getData() > key) {
+                findThroughRecursion(key, node.getRight());
+            } else if (node.getData() < key) {
+                findThroughRecursion(key, node.getLeft());
             }
         }
     }
@@ -107,7 +99,7 @@ public class Tree {
         }
     }
 
-    public Node minimum() {
+    public Node minimum() {  // Minimum node will be available in extreme left
         Node currentNode = root;
         while (currentNode != null) {
             if (currentNode.getLeft() == null) {
@@ -118,7 +110,7 @@ public class Tree {
         return null;
     }
 
-    public Node maximun() {
+    public Node maximum() { // Maximum node will be available in extreme right
         Node currentNode = root;
         while (currentNode != null) {
             if (currentNode.getRight() == null) {
@@ -173,7 +165,7 @@ public class Tree {
             }
             return true;
         }
-        // deleting node with one child
+        // deleting node with one child, left child
         else if (currentNode.getLeft() != null
                 && currentNode.getRight() == null) {
             if (currentNode == root) {

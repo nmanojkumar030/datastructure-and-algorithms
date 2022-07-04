@@ -1,5 +1,9 @@
 package tree;
 
+/**
+ * Input - [1, 2, 3, 4, 5]
+ * Output - Binary Search Tree
+ */
 public class BinarySearchTreeFromSortedArray {
     public Node create(int[] inputArray, int startIndex, int endIndex) {
         if (startIndex > endIndex || endIndex < startIndex)
