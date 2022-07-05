@@ -1,4 +1,4 @@
-package tree;
+package pattern.binarySearch;
 
 public class Node {
     private int data;

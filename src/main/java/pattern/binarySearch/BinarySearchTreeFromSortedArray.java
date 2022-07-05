@@ -1,4 +1,4 @@
-package tree;
+package pattern.binarySearch;
 
 /**
  * Input - [1, 2, 3, 4, 5]

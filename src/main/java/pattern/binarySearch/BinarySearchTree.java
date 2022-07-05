@@ -1,7 +1,6 @@
-package tree;
+package pattern.binarySearch;
 
-public class Tree {
-
+public class BinarySearchTree {
     private Node root;
 
     public void findThroughRecursion(int key, Node node) {

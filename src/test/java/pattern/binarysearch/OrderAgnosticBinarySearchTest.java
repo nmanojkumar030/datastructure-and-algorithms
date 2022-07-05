@@ -1,6 +1,7 @@
-package arrays;
+package pattern.binarysearch;
 
 import org.junit.jupiter.api.Test;
+import pattern.binarySearch.OrderAgnosticBinarySearch;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

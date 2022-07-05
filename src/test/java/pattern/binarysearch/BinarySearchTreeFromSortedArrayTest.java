@@ -1,6 +1,8 @@
-package tree;
+package pattern.binarysearch;
 
 import org.junit.jupiter.api.Test;
+import pattern.binarySearch.BinarySearchTreeFromSortedArray;
+import pattern.binarySearch.Node;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

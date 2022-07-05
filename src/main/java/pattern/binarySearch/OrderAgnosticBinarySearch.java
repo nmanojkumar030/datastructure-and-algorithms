@@ -1,4 +1,4 @@
-package arrays;
+package pattern.binarySearch;
 
 /**
  * Given a sorted array of numbers, find if a given number ‘key’ is present in the array.
@@ -19,7 +19,7 @@ package arrays;
  */
 public class OrderAgnosticBinarySearch {
 
-    public int search(int[] inputArray, int searchElement) {
+    public static int search(int[] inputArray, int searchElement) {
         if (null == inputArray) {
             return -1;
         }
@@ -51,11 +51,18 @@ public class OrderAgnosticBinarySearch {
         return -1;
     }
 
-    private boolean isAscendingOrder(int[] inputArray) {
+    private static boolean isAscendingOrder(int[] inputArray) {
         boolean isAscendingOrder = true;
         if (inputArray.length > 1) {
             isAscendingOrder = (inputArray[0] <= inputArray[inputArray.length - 1]);
         }
         return isAscendingOrder;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(OrderAgnosticBinarySearch.search(new int[]{4, 6, 10}, 10));
+        System.out.println(OrderAgnosticBinarySearch.search(new int[]{1, 2, 3, 4, 5, 6, 7}, 5));
+        System.out.println(OrderAgnosticBinarySearch.search(new int[]{10, 6, 4}, 10));
+        System.out.println(OrderAgnosticBinarySearch.search(new int[]{10, 6, 4}, 4));
     }
 }
