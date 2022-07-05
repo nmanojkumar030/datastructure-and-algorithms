@@ -14,15 +14,15 @@ public class AverageOfStudent {
 
     private static double calculateAverage(String[][] studentArray) {
         Map<String, List<Integer>> studentMarksMap = new HashMap<>();
-        for (String[] eachRow : studentArray) {
-            studentMarksMap.computeIfPresent(eachRow[0], (key, value) -> {
-                value.add(Integer.parseInt(eachRow[1]));
-                return value;
+        for (String[] row : studentArray) {
+            studentMarksMap.computeIfPresent(row[0], (studentName, marksList) -> {
+                marksList.add(Integer.parseInt(row[1]));
+                return marksList;
             });
 
-            studentMarksMap.computeIfAbsent(eachRow[0], (key) -> {
+            studentMarksMap.computeIfAbsent(row[0], (key) -> {
                 List<Integer> marksList = new ArrayList<>();
-                marksList.add(Integer.parseInt(eachRow[1]));
+                marksList.add(Integer.parseInt(row[1]));
                 return marksList;
             });
         }
