@@ -11,7 +11,7 @@ public class PathWithGivenSequence {
 
         PathWithGivenSequence pathWithGivenSequence = new PathWithGivenSequence();
 
-        //System.out.println("Tree has path sequence: " + pathWithGivenSequence.findPath(root, new int[]{1, 0, 7}));
+        System.out.println("Tree has path sequence: " + pathWithGivenSequence.findPath(root, new int[]{1, 0, 7}));
         System.out.println("Tree has path sequence: " + pathWithGivenSequence.findPath(root, new int[]{1, 1, 6}));
     }
 

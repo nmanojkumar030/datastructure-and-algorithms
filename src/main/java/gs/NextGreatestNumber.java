@@ -69,7 +69,6 @@ public class NextGreatestNumber {
     private static Map<Integer, Integer> findNextGreatestNumbersWithStack(Integer[] integers) {
         Map<Integer, Integer> greatestNumberMap = new HashMap<>();
         Stack<Integer> stack = new Stack<>();
-
         stack.push(integers[0]);
 
         for (int i = 1; i < integers.length; i++) {

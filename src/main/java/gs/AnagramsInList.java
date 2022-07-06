@@ -1,7 +1,6 @@
 package gs;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Input = [“cat”, “dog”, “god”, “cat”];
@@ -19,7 +18,31 @@ public class AnagramsInList {
 
     private static List<List<String>> findAllAnagrams(String[] inputArray) {
         List<List<String>> anagramsList = new ArrayList<>();
+        Map<String, List<String>> anagramsMap = new HashMap<>();
 
+        for (String word : inputArray) {
+            char[] charArray = word.toCharArray();
+            Arrays.sort(charArray);
+
+            anagramsMap.computeIfPresent(new String(charArray), (key, value) -> {
+                if (!value.contains(word)) {
+                    value.add(word);
+                }
+                return value;
+            });
+
+            anagramsMap.computeIfAbsent(new String(charArray), (key) -> {
+                List<String> list = new ArrayList<>();
+                list.add(word);
+                return list;
+            });
+
+
+        }
+
+        for (Map.Entry<String, List<String>> entry : anagramsMap.entrySet()) {
+            anagramsList.add(entry.getValue());
+        }
         return anagramsList;
     }
 }

@@ -36,6 +36,11 @@ public class BooksWithAuthors {
         final private String authorId;
         final private String title;
 
+        public Book(String authorId, String title) {
+            this.authorId = authorId;
+            this.title = title;
+        }
+
         public String getAuthorId() {
             return authorId;
         }
@@ -43,16 +48,16 @@ public class BooksWithAuthors {
         public String getTitle() {
             return title;
         }
-
-        public Book(String authorId, String title) {
-            this.authorId = authorId;
-            this.title = title;
-        }
     }
 
     static class Author {
         final private String authorId;
         final private String authorName;
+
+        public Author(String authorId, String authorName) {
+            this.authorId = authorId;
+            this.authorName = authorName;
+        }
 
         public String getAuthorId() {
             return authorId;
@@ -60,11 +65,6 @@ public class BooksWithAuthors {
 
         public String getAuthorName() {
             return authorName;
-        }
-
-        public Author(String authorId, String authorName) {
-            this.authorId = authorId;
-            this.authorName = authorName;
         }
     }
 }
