@@ -1,6 +1,8 @@
 package gs;
 
 import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * Input = [“cat”, “dog”, “god”, “cat”];
@@ -11,9 +13,7 @@ public class AnagramsInList {
     public static void main(String[] args) {
         String[] inputArray = new String[]{"cat", "dog", "god", "cat"};
         List<List<String>> anagramsList = findAllAnagrams(inputArray);
-        for (List<String> anagram : anagramsList) {
-            System.out.println(anagram);
-        }
+        anagramsList.forEach(System.out::println);
     }
 
     private static List<List<String>> findAllAnagrams(String[] inputArray) {
@@ -36,8 +36,6 @@ public class AnagramsInList {
                 list.add(word);
                 return list;
             });
-
-
         }
 
         for (Map.Entry<String, List<String>> entry : anagramsMap.entrySet()) {
