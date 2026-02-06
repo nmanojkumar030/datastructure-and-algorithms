@@ -12,7 +12,6 @@ public class FindAnagrams {
         Map<String, List<String>> anagramMap = new HashMap<>();
 
         for (String string : strings) {
-            String originalString = string;
             char[] characterArray = string.toCharArray();
             Arrays.sort(characterArray);
 
