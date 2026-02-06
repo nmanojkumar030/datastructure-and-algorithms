@@ -4,3 +4,4 @@ target/
 datastructure-and-algorithms.iml
 .java-version
 .DS_Store
+/.vscode/*
