@@ -1,4 +1,4 @@
-package pattern.twoheaps;
+package pattern.priorityqueues.twoheaps;
 
 import java.util.PriorityQueue;
 
@@ -13,8 +13,8 @@ import java.util.PriorityQueue;
  */
 public class MedianOfAStream {
 
-    private PriorityQueue<Integer> minHeap = new PriorityQueue<>((o1, o2) -> o1 - o2);
-    private PriorityQueue<Integer> maxHeap = new PriorityQueue<>((o1, o2) -> o2 - o1);
+    private final PriorityQueue<Integer> minHeap = new PriorityQueue<>((o1, o2) -> o1 - o2);
+    private final PriorityQueue<Integer> maxHeap = new PriorityQueue<>((o1, o2) -> o2 - o1);
 
     // Time Complexity - O(log N)
     public void insertNum(int num) {

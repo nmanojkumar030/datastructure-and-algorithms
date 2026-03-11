@@ -1,8 +1,6 @@
-package pattern.topKElements;
+package pattern.priorityqueues;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Iterator;
 import java.util.PriorityQueue;
 
 /**
@@ -20,7 +18,7 @@ import java.util.PriorityQueue;
 public class KLargestNumbers {
     // Using priority queue - Maximum Heap
     // Time Complexity - O(NlogK + KlogK),
-    public int[] findKLargestNumbers(int[] inputArray, int kElements) {
+    public int[] findKLargestNumbersUsingMaxHeap(int[] inputArray, int kElements) {
         int[] result = new int[kElements];
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>((o1, o2) -> o2 - o1);
 
@@ -37,33 +35,28 @@ public class KLargestNumbers {
 
     // Using priority queue - Minimum Heap
     // Time Complexity - O(KlogK + (N-K)logK)
-    public int[] findKLargestNumbers_usingMinHeap(int[] inputArray, int kElements) {
-        int[] result = new int[kElements];
-        PriorityQueue<Integer> minHeap = new PriorityQueue<>((o1, o2) -> o1 - o2);
+    public int[] findKLargestNumbersUsingMinHeap(int[] inputArray, int kElements) {
 
-        for (int i = 0; i < kElements; i++) {
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        for (int i = 0; i < inputArray.length; i++) {
             minHeap.offer(inputArray[i]);
-        }
 
-        for (int i = kElements; i < inputArray.length; i++) {
-            int minNumber = minHeap.peek();
-            if (minNumber < inputArray[i]) {
+            if (minHeap.size() > kElements) {
                 minHeap.poll();
-                minHeap.offer(inputArray[i]);
             }
         }
 
         int j = 0;
-        Iterator<Integer> iterator = minHeap.iterator();
-        while (iterator.hasNext()) {
-            result[j++] = iterator.next();
+        int[] result = new int[kElements];
+        while (!minHeap.isEmpty()) {
+            result[j++] = minHeap.poll();
         }
         return result;
     }
 
     // Using Arrays.sort
     // Time Complexity - O(NlogN)
-    public int[] findKLargestNumbers_usingSort(int[] inputArray, int kElements) {
+    public int[] findKLargestNumbersUsingSort(int[] inputArray, int kElements) {
         int[] result = new int[kElements];
         Arrays.sort(inputArray);
         int j = 0;

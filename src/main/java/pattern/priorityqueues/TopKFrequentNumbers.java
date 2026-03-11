@@ -1,4 +1,4 @@
-package pattern.topKElements;
+package pattern.priorityqueues;
 
 import java.util.*;
 
@@ -23,13 +23,5 @@ public class TopKFrequentNumbers {
             topNumbers.add(minHeap.poll().getKey());
         }
         return topNumbers;
-    }
-
-    public static void main(String[] args) {
-        List<Integer> result = TopKFrequentNumbers.findTopKFrequentNumbers(new int[]{1, 3, 5, 12, 11, 12, 11}, 5);
-        System.out.println("Here are the K frequent numbers: " + result);
-
-        result = TopKFrequentNumbers.findTopKFrequentNumbers(new int[]{5, 12, 11, 3, 11}, 2);
-        System.out.println("Here are the K frequent numbers: " + result);
     }
 }
