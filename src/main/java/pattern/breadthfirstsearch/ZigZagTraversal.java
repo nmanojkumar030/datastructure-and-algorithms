@@ -31,7 +31,7 @@ public class ZigZagTraversal {
         Queue<TreeNode> levelQueue = new LinkedList<>();
         levelQueue.offer(root);
         boolean leftToRight = true;
-        while (isLevelQueueNotEmpty(levelQueue)) {
+        while (!levelQueue.isEmpty()) {
             List<TreeNode> levelList = new LinkedList<>();
             int levelSize = levelQueue.size();
             for (int i = 0; i < levelSize; i++) {
@@ -40,23 +40,17 @@ public class ZigZagTraversal {
                     levelList.add(node);
                 }
                 levelList.add(0, node);
-                addNodeToQueue(levelQueue, node.left);
-                addNodeToQueue(levelQueue, node.right);
+                if (null != node.left) {
+                    levelQueue.offer(node.left);
+                }
+                if (null != node.right) {
+                    levelQueue.offer(node.right);
+                }
             }
             result.add(levelList);
             leftToRight = false;
         }
         return result;
-    }
-
-    private boolean isLevelQueueNotEmpty(Queue<TreeNode> levelQueue) {
-        return !levelQueue.isEmpty();
-    }
-
-    private void addNodeToQueue(Queue<TreeNode> levelQueue, TreeNode treeNode) {
-        if (null != treeNode) {
-            levelQueue.offer(treeNode);
-        }
     }
 }
 

@@ -43,18 +43,36 @@ public class RemoveDuplicates {
         return uniqueElementIndex + 1;
     }
 
-    public int remove1(int[] nums) {
-        Set<Integer> contextSet = new TreeSet<>();
+    public int removeDuplicatesFromSortedArrayUsingSet(int[] nums) {
+        Set<Integer> integerSet = new TreeSet<>();
         for (int i = 0; i < nums.length; i++) {
-            contextSet.add(nums[i]);
+            integerSet.add(nums[i]);
         }
-        Integer[] integerArray = new Integer[contextSet.size()];
-        contextSet.toArray(integerArray);
+        Integer[] integerArray = new Integer[integerSet.size()];
+        integerSet.toArray(integerArray);
 
         for (int i = 0; i < integerArray.length; i++) {
             nums[i] = integerArray[i];
         }
         return integerArray.length;
+    }
+
+    public int removeDuplicatesFromSortedArray(int[] nums) {
+        if (nums == null || nums.length == 0)
+            return -1;
+
+        if (nums.length == 1) {
+            return 1;
+        }
+
+        int uniqueElementIndex = 0;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[i - 1]) {
+                nums[++uniqueElementIndex] = nums[i];
+            }
+        }
+
+        return uniqueElementIndex + 1;
     }
 
 }

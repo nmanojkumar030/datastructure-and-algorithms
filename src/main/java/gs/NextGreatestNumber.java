@@ -22,6 +22,12 @@ public class NextGreatestNumber {
         for (Map.Entry entry : nextGreatestNumberMap.entrySet()) {
             System.out.println(entry.getKey() + "-" + entry.getValue());
         }
+
+        Integer[] integers2 = new Integer[]{8, 7, 9};
+        Map<Integer, Integer> nextGreatestNumberMap2 = findNextGreatestNumbersWithStack2(integers2);
+        for (Map.Entry entry : nextGreatestNumberMap2.entrySet()) {
+            System.out.println(entry.getKey() + "-" + entry.getValue());
+        }
     }
 
     private static Map<Integer, Integer> findNextGreatestNumbersWithNestedLoops(Integer[] integers) {
@@ -99,4 +105,43 @@ public class NextGreatestNumber {
         }
         return greatestNumberMap;
     }
+
+    private static Map<Integer, Integer> findNextGreatestNumbersWithStack2(Integer[] integers) {
+        Map<Integer, Integer> greatestNumberMap = new HashMap<>();
+        if (integers == null || integers.length == 0) {
+            return greatestNumberMap;
+        }
+
+        Stack<Integer> stack = new Stack<>();
+        stack.push(integers[0]);
+
+        for (int i = 1; i < integers.length; i++) {
+            int currentElement = integers[i];
+
+            if (!stack.empty()) {
+                int stackTopElement = stack.pop();
+
+                while (currentElement > stackTopElement) {
+                    greatestNumberMap.put(stackTopElement, currentElement);
+
+                    if (stack.isEmpty()) {
+                        break;
+                    }
+                    stackTopElement = stack.pop();
+                }
+
+                if (currentElement < stackTopElement) {
+                    stack.push(stackTopElement);
+                }
+            }
+            stack.push(currentElement);
+        }
+
+        while (!stack.empty()) {
+            greatestNumberMap.put(stack.pop(), -1);
+        }
+
+        return greatestNumberMap;
+    }
+
 }

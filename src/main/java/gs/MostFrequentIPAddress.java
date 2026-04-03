@@ -1,9 +1,6 @@
 package gs;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class MostFrequentIPAddress {
 
@@ -20,14 +17,14 @@ public class MostFrequentIPAddress {
             ipCountMap.put(parsedStrings[0], ipCountMap.getOrDefault(parsedStrings[0], 1) + 1);
         }
 
-        Integer mostFrequency = -1;
+        int mostFrequency = -1;
         for (Map.Entry<String, Integer> entry : ipCountMap.entrySet()) {
             mostFrequency = Math.max(entry.getValue(), mostFrequency);
         }
 
         List<String> ipAddressList = new ArrayList<>();
         for (Map.Entry<String, Integer> entry : ipCountMap.entrySet()) {
-            if (entry.getValue() == mostFrequency) {
+            if (Objects.equals(entry.getValue(), mostFrequency)) {
                 ipAddressList.add(entry.getKey());
             }
         }

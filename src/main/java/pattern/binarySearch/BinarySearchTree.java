@@ -24,10 +24,10 @@ public class BinarySearchTree {
             if (currentNode.getData() == key) {
                 found = true;
                 System.out.println("Key found!");
-            } else if (currentNode.getData() > key) {
-                currentNode = currentNode.getRight();
             } else if (currentNode.getData() < key) {
                 currentNode = currentNode.getLeft();
+            } else if (currentNode.getData() > key) {
+                currentNode = currentNode.getRight();
             }
         }
 
@@ -243,8 +243,6 @@ public class BinarySearchTree {
 
         Node left = currentNode.getLeft();
         Node right = currentNode.getRight();
-
-
     }
 
 }

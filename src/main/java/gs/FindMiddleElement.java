@@ -18,7 +18,7 @@ public class FindMiddleElement {
         return integerList.get((int) size / 2);
     }
 
-    public int findTheMiddleElementUsingPointers(List<Integer> integerList) {
+    public int findTheMiddleElementUsingIterator(List<Integer> integerList) {
         if (integerList == null || integerList.isEmpty()) {
             throw new IllegalArgumentException("List is null or empty");
         }
@@ -36,5 +36,34 @@ public class FindMiddleElement {
             }
         }
         return middle;
+    }
+
+    public int findTheMiddleElementUsingEnhancedForLoop(List<Integer> integerList) {
+        if (integerList == null || integerList.isEmpty()) {
+            throw new IllegalArgumentException("List is null or empty");
+        }
+
+        int count = 0;
+        for (int num : integerList) {
+            count++;
+        }
+
+        return integerList.get(count / 2);
+    }
+
+    public int findTheMiddleElementUsingWhileLoop(List<Integer> integerList) {
+        if (integerList == null || integerList.isEmpty()) {
+            throw new IllegalArgumentException("List is null or empty");
+        }
+
+        int index = 0;
+        try {
+            while (integerList.get(index) != null) {
+                index++;
+            }
+        } catch (IndexOutOfBoundsException e) {
+
+        }
+        return integerList.get(index / 2);
     }
 }

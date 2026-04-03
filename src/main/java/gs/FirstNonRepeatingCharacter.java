@@ -20,7 +20,7 @@ public class FirstNonRepeatingCharacter {
             characterCountMap.put(input.charAt(i), characterCountMap.getOrDefault(input.charAt(i), 0) + 1);
         }
 
-        char firstNonRepeatCharacter = '\0';
+        char firstNonRepeatCharacter = 0;
         for (Map.Entry<Character, Integer> entry : characterCountMap.entrySet()) {
             if (entry.getValue() == 1) {
                 firstNonRepeatCharacter = entry.getKey();

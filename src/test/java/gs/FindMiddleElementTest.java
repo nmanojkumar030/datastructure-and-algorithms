@@ -46,7 +46,7 @@ class FindMiddleElementTest {
         List<Integer> integerList = Collections.emptyList();
         FindMiddleElement findMiddleElement = new FindMiddleElement();
         IllegalArgumentException illegalArgumentException = assertThrows(IllegalArgumentException.class,
-                () -> findMiddleElement.findTheMiddleElementUsingPointers(integerList));
+                () -> findMiddleElement.findTheMiddleElementUsingIterator(integerList));
         assertEquals("List is null or empty", illegalArgumentException.getMessage());
     }
 
@@ -54,7 +54,7 @@ class FindMiddleElementTest {
     public void shouldThrowExceptionWhenListIsNullUsingPointers() {
         FindMiddleElement findMiddleElement = new FindMiddleElement();
         IllegalArgumentException illegalArgumentException = assertThrows(IllegalArgumentException.class,
-                () -> findMiddleElement.findTheMiddleElementUsingPointers(null));
+                () -> findMiddleElement.findTheMiddleElementUsingIterator(null));
         assertEquals("List is null or empty", illegalArgumentException.getMessage());
     }
 
@@ -62,7 +62,7 @@ class FindMiddleElementTest {
     public void shouldReturnTheMiddleElementWhenTheListHasOddNumbersUsingPointers() {
         List<Integer> integerList = List.of(1, 2, 3);
         FindMiddleElement findMiddleElement = new FindMiddleElement();
-        assertEquals(2, findMiddleElement.findTheMiddleElementUsingPointers(integerList));
+        assertEquals(2, findMiddleElement.findTheMiddleElementUsingIterator(integerList));
     }
 
 
@@ -70,7 +70,39 @@ class FindMiddleElementTest {
     public void shouldReturnTheMiddleElementWhenTheListHasEvenNumbersUsingPointers() {
         List<Integer> integerList = List.of(1, 2, 3, 4);
         FindMiddleElement findMiddleElement = new FindMiddleElement();
-        assertEquals(3, findMiddleElement.findTheMiddleElementUsingPointers(integerList));
+        assertEquals(3, findMiddleElement.findTheMiddleElementUsingIterator(integerList));
+    }
+
+
+    @Test
+    public void shouldReturnTheMiddleElementWhenTheListHasOddNumbersUsingWhileLoop() {
+        List<Integer> integerList = List.of(1, 2, 3);
+        FindMiddleElement findMiddleElement = new FindMiddleElement();
+        assertEquals(2, findMiddleElement.findTheMiddleElementUsingWhileLoop(integerList));
+    }
+
+
+    @Test
+    public void shouldReturnTheMiddleElementWhenTheListHasEvenNumbersUsingWhileLoop() {
+        List<Integer> integerList = List.of(1, 2, 3, 4);
+        FindMiddleElement findMiddleElement = new FindMiddleElement();
+        assertEquals(3, findMiddleElement.findTheMiddleElementUsingWhileLoop(integerList));
+    }
+
+
+    @Test
+    public void shouldReturnTheMiddleElementWhenTheListHasOddNumbersUsingEnhancedForLoop() {
+        List<Integer> integerList = List.of(1, 2, 3);
+        FindMiddleElement findMiddleElement = new FindMiddleElement();
+        assertEquals(2, findMiddleElement.findTheMiddleElementUsingEnhancedForLoop(integerList));
+    }
+
+
+    @Test
+    public void shouldReturnTheMiddleElementWhenTheListHasEvenNumbersUsingEnhancedForLoop() {
+        List<Integer> integerList = List.of(1, 2, 3, 4);
+        FindMiddleElement findMiddleElement = new FindMiddleElement();
+        assertEquals(3, findMiddleElement.findTheMiddleElementUsingEnhancedForLoop(integerList));
     }
 
 }

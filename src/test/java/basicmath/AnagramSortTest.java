@@ -1,7 +1,7 @@
 package basicmath;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AnagramSortTest {
 
@@ -48,4 +48,4 @@ public class AnagramSortTest {
         assertFalse(AnagramSort.IsAnagram("Hello", "hello"));
         assertFalse(AnagramSort.IsAnagram("World", "world"));
     }
-} 
+}

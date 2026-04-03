@@ -1,4 +1,4 @@
-package arrays;
+package pattern.twopointers;
 
 /**
  * https://leetcode.com/problems/search-insert-position/
@@ -19,6 +19,7 @@ package arrays;
  */
 public class SearchInsert {
 
+    // O(n) Time Complexity
     public int searchInsert(int[] nums, int target) {
         int result = -1;
         for (int i = 0; i < nums.length; i++) {
@@ -28,5 +29,30 @@ public class SearchInsert {
             }
         }
         return result == -1 ? nums.length : result;
+    }
+
+    // O(log n) Time Complexity
+    public int searchInsertUsingBinarySearch(int[] nums, int target) {
+        int start = 0;
+        int end = nums.length - 1;
+        int mid = -1;
+
+        while (start <= end) {
+            mid = start + (end - start) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            }
+            if (nums[mid] < target) {
+                start = mid + 1;
+            }
+            if (nums[mid] > target) {
+                if ((mid - 1 >= 0) && nums[mid - 1] > target) {
+                    end = mid - 1;
+                } else {
+                    return mid;
+                }
+            }
+        }
+        return mid;
     }
 }

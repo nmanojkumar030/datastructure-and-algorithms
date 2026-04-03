@@ -1,5 +1,7 @@
 package pattern.twopointers;
 
+import java.util.Arrays;
+
 /**
  * Given a sorted array, create a new array containing squares of
  * all the numbers of the input array in the sorted order.
@@ -30,6 +32,32 @@ public class SortedArraySquares {
         return squares;
     }
 
+    public static int[] squaresOfASortedArrayUsingStreams(int[] nums) {
+        return Arrays.stream(nums).map(n -> n * n).sorted().toArray();
+    }
+
+    public static int[] squaresOfASortedArrayUsingPointers(int[] nums) {
+        int left = 0;
+        int right = nums.length - 1;
+        int[] squares = new int[nums.length];
+        int highestSquareIdx = nums.length - 1;
+
+        while (left <= right) {
+            int leftSquares = nums[left] * nums[left];
+            int rightSquares = nums[right] * nums[right];
+
+            if (leftSquares > rightSquares) {
+                squares[highestSquareIdx--] = leftSquares;
+                left++;
+            } else if (leftSquares <= rightSquares) {
+                squares[highestSquareIdx--] = rightSquares;
+                right--;
+            }
+        }
+        return squares;
+    }
+
+
     public static void main(String[] args) {
 
         int[] result = SortedArraySquares.makeSquares(new int[]{-2, -1, 0, 2, 3});
@@ -38,6 +66,16 @@ public class SortedArraySquares {
         System.out.println();
 
         result = SortedArraySquares.makeSquares(new int[]{-3, -1, 0, 1, 2});
+        for (int num : result)
+            System.out.print(num + " ");
+        System.out.println();
+
+        result = SortedArraySquares.squaresOfASortedArrayUsingStreams(new int[]{-3, -1, 0, 1, 2});
+        for (int num : result)
+            System.out.print(num + " ");
+        System.out.println();
+
+        result = SortedArraySquares.squaresOfASortedArrayUsingPointers(new int[]{-3, -1, 0, 1, 2});
         for (int num : result)
             System.out.print(num + " ");
         System.out.println();

@@ -13,6 +13,6 @@ public class NumberReverse {
 
     public static void main(String a[]) {
         NumberReverse nr = new NumberReverse();
-        System.out.println("Result: " + nr.reverseNumber(100));
+        System.out.println("Result: " + nr.reverseNumber(123));
     }
 }

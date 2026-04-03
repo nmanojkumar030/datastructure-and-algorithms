@@ -1,4 +1,4 @@
-package arrays;
+package pattern.twopointers;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +10,7 @@ public class SortColorsTest {
     public void testSortColors1() throws Exception {
         int[] nums = new int[]{2, 0, 2, 1, 1, 0};
         SortColors sortColors = new SortColors();
-        sortColors.sortColors(nums);
+        sortColors.sortColorsUsingPriorityQueue(nums);
         assertArrayEquals(new int[]{0, 0, 1, 1, 2, 2}, nums);
     }
 
@@ -18,7 +18,7 @@ public class SortColorsTest {
     public void testSortColors2() throws Exception {
         int[] nums = new int[]{2, 0, 1};
         SortColors sortColors = new SortColors();
-        sortColors.sortColors(nums);
+        sortColors.sortColorsUsingPriorityQueue(nums);
         assertArrayEquals(new int[]{0, 1, 2}, nums);
     }
 
@@ -26,7 +26,7 @@ public class SortColorsTest {
     public void testSortColors3() throws Exception {
         int[] nums = new int[]{0};
         SortColors sortColors = new SortColors();
-        sortColors.sortColors(nums);
+        sortColors.sortColorsUsingPriorityQueue(nums);
         assertArrayEquals(new int[]{0}, nums);
     }
 
@@ -34,7 +34,7 @@ public class SortColorsTest {
     public void testSortColors4() throws Exception {
         int[] nums = new int[]{1};
         SortColors sortColors = new SortColors();
-        sortColors.sortColors(nums);
+        sortColors.sortColorsUsingPriorityQueue(nums);
         assertArrayEquals(new int[]{1}, nums);
     }
 

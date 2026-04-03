@@ -6,7 +6,7 @@ public class StackWithLinkedListImpl<E> {
     private StackNode<E> top;
     private int length;
 
-    public void push(E x) throws Exception {
+    public void push(E x) {
         StackNode<E> node = new StackNode<>(x);
         node.nextRef = top;
         top = node;
@@ -23,7 +23,7 @@ public class StackWithLinkedListImpl<E> {
         return x;
     }
 
-    public E top() throws Exception {
+    public E peek() throws Exception {
         if (isEmpty()) {
             throw new Exception("Stack is Empty");
         }
@@ -31,14 +31,14 @@ public class StackWithLinkedListImpl<E> {
     }
 
     public boolean isEmpty() {
-        return length == 0 ? true : false;
+        return length == 0;
     }
 
-    private class StackNode<E> {
+    private static class StackNode<E> {
 
-        private E data;
+        private final E data;
 
-        private StackNode nextRef;
+        private StackNode<E> nextRef;
 
         public StackNode(E data) {
             this.data = data;

@@ -1,4 +1,4 @@
-package arrays;
+package pattern.twopointers;
 
 import org.junit.jupiter.api.Test;
 

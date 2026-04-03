@@ -1,4 +1,4 @@
-package arrays;
+package pattern.twopointers;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +29,7 @@ import java.util.Map;
 public class TwoSum {
     // Brute Force and less efficient solution
     // Time complexity O(n2)
-    public int[] twoSum1(int[] nums, int target) {
+    public int[] twoSum(int[] nums, int target) {
         int[] result = new int[2];
         for (int i = 0; i < nums.length - 1; i++) {
             for (int j = i + 1; j < nums.length; j++) {
@@ -44,12 +44,12 @@ public class TwoSum {
     }
 
     // Time complexity O(n)
-    public int[] twoSum(int[] nums, int target) {
+    public int[] twoSumUsingMaps(int[] nums, int target) {
         Map<Integer, Integer> contextMap = new HashMap<>(nums.length);
         int[] result = null;
         for (int i = 0; i < nums.length; i++) {
             int difference = target - nums[i];
-            if (contextMap.get(difference) != null) {
+            if (contextMap.containsKey(difference)) {
                 result = new int[]{contextMap.get(difference), i};
                 break;
             }

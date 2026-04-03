@@ -1,12 +1,37 @@
 package bubblesort;
 
-public class ArrayBub {
+public class ArrayBubbleSort {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ArrayBubbleSort arrayBubbleSort = new ArrayBubbleSort(100);
+
+		arrayBubbleSort.insert(10);
+		arrayBubbleSort.insert(9);
+		arrayBubbleSort.insert(8);
+		arrayBubbleSort.insert(7);
+		arrayBubbleSort.insert(6);
+		arrayBubbleSort.insert(5);
+		arrayBubbleSort.insert(4);
+		arrayBubbleSort.insert(3);
+		arrayBubbleSort.insert(2);
+		arrayBubbleSort.insert(1);
+
+		arrayBubbleSort.display();
+
+		arrayBubbleSort.bubbleSort();
+
+		arrayBubbleSort.display();
+
+	}
 
 	private int[] array;
 
 	private int nElements;
 
-	public ArrayBub(int maxSize) {
+	public ArrayBubbleSort(int maxSize) {
 		array = new int[maxSize];
 		nElements = 0;
 	}
@@ -23,7 +48,7 @@ public class ArrayBub {
 		System.out.println();
 	}
 
-	public void bubblesort() {
+	public void bubbleSort() {
 		for (int i = 0; i < nElements; i++) {
 			for (int j = 0; j < nElements - 1; j++) {
 				if (array[j] > array[j + 1]) {
@@ -35,7 +60,7 @@ public class ArrayBub {
 		}
 	}
 
-	public void bubbleSort_Efficient() {
+	public void bubbleSortEfficient() {
 		for (int i = nElements - 1; i > 0; i--) {
 			for (int j = 0; j < i; j++) {
 				if (array[j] > array[j + 1]) {

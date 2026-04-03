@@ -1,4 +1,4 @@
-package arrays;
+package pattern.twopointers;
 
 
 import static java.lang.Math.max;

@@ -1,4 +1,4 @@
-package arrays;
+package pattern.twopointers;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TwoSumTest {
 
     @Test
-    public void testTwoSum1() throws Exception {
+    public void shouldFindTwoNumbersWithSmallTarget() throws Exception {
         TwoSum twoSum = new TwoSum();
         int[] result = twoSum.twoSum(new int[]{2, 7, 11, 15}, 9);
 
@@ -19,7 +19,7 @@ public class TwoSumTest {
     }
 
     @Test
-    public void testTwoSum2() throws Exception {
+    public void shouldFindTwoNumbersWithLargeTarget() throws Exception {
         TwoSum twoSum = new TwoSum();
         int[] result = twoSum.twoSum(new int[]{2, 7, 11, 15}, 26);
 
@@ -28,7 +28,7 @@ public class TwoSumTest {
     }
 
     @Test
-    public void testTwoSum3() throws Exception {
+    public void shouldFindTwoMiddleNumbers() throws Exception {
         TwoSum twoSum = new TwoSum();
         int[] result = twoSum.twoSum(new int[]{2, 7, 11, 15}, 18);
 
@@ -37,7 +37,7 @@ public class TwoSumTest {
     }
 
     @Test
-    public void testTwoSum4() throws Exception {
+    public void shouldFindTwoNumbersWithDuplicateElements() throws Exception {
         TwoSum twoSum = new TwoSum();
         int[] result = twoSum.twoSum(new int[]{3, 2, 3}, 6);
 
@@ -46,7 +46,7 @@ public class TwoSumTest {
     }
 
     @Test
-    public void testTwoSum5() throws Exception {
+    public void shouldFindConsecutiveNumbersInArray() throws Exception {
         TwoSum twoSum = new TwoSum();
         int[] result = twoSum.twoSum(new int[]{3, 2, 4}, 6);
 
@@ -55,7 +55,7 @@ public class TwoSumTest {
     }
 
     @Test
-    public void testTwoSum6() throws Exception {
+    public void shouldFindTwoIdenticalNumbers() throws Exception {
         TwoSum twoSum = new TwoSum();
         int[] result = twoSum.twoSum(new int[]{3, 3}, 6);
 

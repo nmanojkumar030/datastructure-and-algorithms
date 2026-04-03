@@ -1,6 +1,9 @@
 package pattern.twopointers;
 
 import java.util.Arrays;
+import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.stream.Collectors;
 
 /**
  * Given an array containing 0s, 1s and 2s, sort the array in-place.
@@ -19,7 +22,7 @@ import java.util.Arrays;
  */
 public class DutchFlag {
 
-    public static void sort(int[] arr) {
+    public static void sortUsingTwoPointers(int[] arr) {
         // all elements < low are 0 and all elements > high are 2
         // all elements from >= low < i are 1
         int low = 0, high = arr.length - 1;
@@ -45,15 +48,53 @@ public class DutchFlag {
         arr[j] = temp;
     }
 
+    public static void sortUsingCollectorsAndMap(int[] arr) {
+        Map<Integer, Long> frequencyMap = Arrays.stream(arr)
+                .boxed()
+                .collect(Collectors.groupingBy(element -> element, Collectors.counting()));
+
+        int i = 0;
+        for (int key : new int[]{0, 1, 2}) {
+            Long count = frequencyMap.getOrDefault(key, 0L);
+            for (int j = 0; j < count; j++) {
+                arr[i++] = key;
+            }
+        }
+    }
+
+    public static void sortUsingPriorityQueue(int[] arr) {
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+       for (int element: arr) {
+           minHeap.offer(element);
+       }
+       int i = 0;
+       while (!minHeap.isEmpty()) {
+           Integer min = minHeap.poll();
+           arr[i++] = min;
+       }
+    }
+
     public static void main(String[] args) {
         int[] arr = new int[]{1, 0, 2, 1, 0};
-        DutchFlag.sort(arr);
+        DutchFlag.sortUsingTwoPointers(arr);
         System.out.print(Arrays.toString(arr));
 
         System.out.println();
 
         arr = new int[]{2, 2, 0, 1, 2, 0};
-        DutchFlag.sort(arr);
+        DutchFlag.sortUsingTwoPointers(arr);
+        System.out.print(Arrays.toString(arr));
+
+        System.out.println();
+
+        arr = new int[]{1, 0, 2, 1, 0};
+        DutchFlag.sortUsingCollectorsAndMap(arr);
+        System.out.print(Arrays.toString(arr));
+
+        System.out.println();
+
+        arr = new int[]{1, 0, 2, 1, 0};
+        DutchFlag.sortUsingPriorityQueue(arr);
         System.out.print(Arrays.toString(arr));
     }
 }

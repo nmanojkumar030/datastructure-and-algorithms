@@ -1,8 +1,11 @@
-package arrays;
+package pattern.twopointers;
 
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.TreeMap;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * https://leetcode.com/problems/sort-colors/
@@ -22,6 +25,7 @@ import java.util.TreeMap;
  * Output: [0,1,2]
  */
 public class SortColors {
+
     public void sortColors(int[] nums) {
         Map<Integer, Integer> elementCountMap = new TreeMap<>();
         for (int i = 0; i < nums.length; i++) {
@@ -41,6 +45,39 @@ public class SortColors {
                 j++;
             }
             previousIndex += j;
+        }
+
+        int index = 0;
+        for (int i : new int[]{0, 1, 2}) {
+            int count = elementCountMap.getOrDefault(i, 0);
+            for (int j = 0; j < count; j++) {
+                nums[index++] = i;
+            }
+        }
+    }
+
+    public void sortColorsUsingPriorityQueue(int[] nums) {
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            priorityQueue.offer(nums[i]);
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = priorityQueue.poll();
+        }
+    }
+
+    public void sortColorsUsingStreams(int[] nums) {
+        Map<Integer, Long> colorCount = Arrays.stream(nums).boxed()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        int idx = 0;
+        for (int color : Arrays.asList(0, 1, 2)) {
+            long count = colorCount.getOrDefault(color, 0L);
+            for (int i = 0; i < count; i++) {
+                nums[idx++] = color;
+            }
         }
     }
 }

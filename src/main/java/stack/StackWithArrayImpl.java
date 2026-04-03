@@ -6,12 +6,12 @@ package stack;
  */
 public class StackWithArrayImpl<E> {
 
-    private E[] data;
+    private final E[] data;
     private int top = -1;
     private final int MAX_CAPACITY = 10;
 
     public StackWithArrayImpl() {
-        data = (E[]) new Object[10];
+        data = (E[]) new Object[MAX_CAPACITY];
     }
 
     public void push(E x) throws Exception {
@@ -29,7 +29,7 @@ public class StackWithArrayImpl<E> {
         return data[top--];
     }
 
-    public E top() throws Exception {
+    public E peek() throws Exception {
         if (top > -1) {
             return data[top];
         } else {
@@ -42,7 +42,7 @@ public class StackWithArrayImpl<E> {
     }
 
     public boolean isEmpty() {
-        return top == -1 ? true : false;
+        return top == -1;
     }
 
 }
