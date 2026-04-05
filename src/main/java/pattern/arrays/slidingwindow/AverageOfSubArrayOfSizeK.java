@@ -51,4 +51,20 @@ public class AverageOfSubArrayOfSizeK {
         }
         return result;
     }
+
+    public double[] findAverageOfSubArrayOfSizeK(int[] nums, int k) {
+        double[] result = new double[nums.length - k + 1];
+        double slidingWindowSum = 0;
+        int windowStart = 0;
+        for (int windowEnd = 0; windowEnd < nums.length; windowEnd++) {
+            slidingWindowSum += nums[windowEnd];
+
+            if ((windowEnd - windowStart + 1) == k) {
+                result[windowStart] = slidingWindowSum / k;
+                slidingWindowSum -= nums[windowStart];
+                windowStart++;
+            }
+        }
+        return result;
+    }
 }

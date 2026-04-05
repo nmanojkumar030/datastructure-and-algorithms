@@ -20,4 +20,11 @@ public class MaximumOfSubArrayOfSizeKTest {
         int result = maximumOfSubArrayOfSizeK.findMaxSumOfSubArray(new int[]{2, 3, 4, 1, 5}, 2);
         assertEquals(7, result);
     }
+
+    @Test
+    public void testFindMaxAverageSum() {
+        MaximumOfSubArrayOfSizeK maximumOfSubArrayOfSizeK = new MaximumOfSubArrayOfSizeK();
+        double result = maximumOfSubArrayOfSizeK.findMaxAverage(new int[]{1,12,-5,-6,50,3}, 4);
+        assertEquals(12.75, result);
+    }
 }

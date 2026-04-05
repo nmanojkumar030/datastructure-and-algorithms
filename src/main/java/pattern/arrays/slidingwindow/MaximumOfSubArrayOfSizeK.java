@@ -46,4 +46,21 @@ public class MaximumOfSubArrayOfSizeK {
         }
         return maxSum;
     }
+
+    public double findMaxAverage(int[] nums, int k) {
+        double maxAverage = 0;
+        double slidingWindowSum = 0;
+        for (int i = 0; i < k; i++) {
+            slidingWindowSum += nums[i];
+        }
+        maxAverage = slidingWindowSum / k;
+
+        for (int i = k; i < nums.length; i++) {
+            slidingWindowSum = slidingWindowSum + nums[i] - nums[i - k];
+            double average = slidingWindowSum / k;
+            maxAverage = Math.max(maxAverage, average);
+        }
+
+        return maxAverage;
+    }
 }
