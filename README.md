@@ -1,45 +1,61 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+# Data Structures and Algorithms
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+A Java practice repository covering core data structure implementations, algorithm patterns, and standalone problem-solving exercises.
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+## Project Structure
 
----
+```
+src/main/java/
+├── datastructures/         # Core data structure implementations
+│   ├── linkedlist/         # Singly linked list with insert/remove operations
+│   ├── stack/              # Stack via array and linked list
+│   ├── queue/              # Queue operations
+│   ├── tree/               # Binary tree with in-order traversal
+│   └── trie/               # Trie insert and search
+│
+├── algorithms/
+│   └── sorting/            # Bubble sort (standard and optimised)
+│
+├── pattern/                # Problems organised by algorithmic pattern
+│   ├── arrays/
+│   │   ├── slidingwindow/  # Fixed and variable window problems
+│   │   ├── twopointers/    # Two-pointer and three-sum problems
+│   │   └── sorting/        # Sort-based array problems
+│   ├── binarySearch/       # Order-agnostic search, floor/ceiling, bitonic array
+│   ├── breadthfirstsearch/ # Level-order, zigzag, reverse level traversal
+│   ├── cyclicsort/         # Missing/duplicate number variants
+│   ├── depthfirstsearch/   # Path sum, all paths, sequence check
+│   ├── fastandslowpointer/ # Cycle detection, middle of list, happy number
+│   ├── kwaymerge/          # Merge K sorted lists
+│   ├── magicallookups/     # HashMap-based lookup problems
+│   ├── mergeintervals/     # Merge, insert, intersect intervals
+│   ├── priorityqueues/     # K largest/smallest, top-K frequent, two heaps
+│   ├── recognizingpatterns/# Dynamic programming pattern recognition
+│   ├── reverselinkedlist/  # Reverse full list, sub-list, every K elements
+│   ├── strings/            # String manipulation (reverse vowels, etc.)
+│   └── subsets/            # Subset generation
+│
+└── practice/               # Standalone problems by topic
+    ├── arrays/             # Second smallest, middle element, next greatest, frequency
+    ├── strings/            # Anagram detection/grouping, palindrome, first non-repeating char
+    ├── math/               # FizzBuzz, number reverse, trailing zeros, student average
+    └── frequency/          # Most frequent IP address
+```
 
-## Edit a file
+## Getting Started
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+**Prerequisites:** Java 11+, Maven 3.x
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+```bash
+# Build
+mvn compile
 
----
+# Run all tests
+mvn test
+```
 
-## Create a file
+## Tech Stack
 
-Next, you’ll add a new file to this repository.
-
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
-
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
-
----
-
-## Clone a repository
-
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
-
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
-
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+- Java 11
+- JUnit 5
+- Maven
