@@ -62,13 +62,13 @@ public class PairWithTargetSumTest {
     @Test
     public void testBinarySearchWithLargeArray() {
         int[] result = pairWithTargetSum.searchUsingBinarySearch(new int[]{1, 3, 5, 7, 9, 11, 13}, 16);
-        assertEquals(2, result[0]);
-        assertEquals(5, result[1]);
+        assertEquals(1, result[0]);
+        assertEquals(6, result[1]);
     }
 
     @Test
     public void testBinarySearchWithNegativeNumbers() {
-        int[] result = pairWithTargetSum.searchUsingBinarySearch(new int[]{-5, -2, 0, 3, 8}, 5);
+        int[] result = pairWithTargetSum.searchUsingBinarySearch(new int[]{-5, -2, 0, 3, 8}, 6);
         assertEquals(1, result[0]);
         assertEquals(4, result[1]);
     }
@@ -97,7 +97,7 @@ public class PairWithTargetSumTest {
 
     @Test
     public void testTwoPointersWithNegativeNumbers() {
-        int[] result = pairWithTargetSum.searchUsingTwoPointers(new int[]{-5, -2, 0, 3, 8}, 5);
+        int[] result = pairWithTargetSum.searchUsingTwoPointers(new int[]{-5, -2, 0, 3, 8}, 6);
         assertEquals(1, result[0]);
         assertEquals(4, result[1]);
     }
@@ -127,13 +127,13 @@ public class PairWithTargetSumTest {
     @Test
     public void testHashTableWithLargeArray() {
         int[] result = pairWithTargetSum.searchUsingHashTable(new int[]{1, 3, 5, 7, 9, 11, 13}, 16);
-        assertEquals(2, result[0]);
-        assertEquals(5, result[1]);
+        assertEquals(3, result[0]);
+        assertEquals(4, result[1]);
     }
 
     @Test
     public void testHashTableWithNegativeNumbers() {
-        int[] result = pairWithTargetSum.searchUsingHashTable(new int[]{-5, -2, 0, 3, 8}, 5);
+        int[] result = pairWithTargetSum.searchUsingHashTable(new int[]{-5, -2, 0, 3, 8}, 6);
         assertEquals(1, result[0]);
         assertEquals(4, result[1]);
     }

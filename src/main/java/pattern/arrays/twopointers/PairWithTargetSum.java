@@ -29,16 +29,14 @@ public class PairWithTargetSum {
         for (int i = 0; i < inputArray.length - 1; i++) {
             int firsPointer = i + 1;
             int secondPointer = inputArray.length - 1;
-            while (firsPointer < secondPointer) {
+            while (firsPointer <= secondPointer) {
                 int midPointer = (firsPointer + secondPointer) / 2;
                 if (inputArray[i] + inputArray[midPointer] < targetSum) {
                     firsPointer = midPointer + 1;
                 } else if (inputArray[i] + inputArray[midPointer] > targetSum) {
                     secondPointer = midPointer - 1;
                 } else {
-                    pair[0] = i;
-                    pair[1] = midPointer;
-                    break;
+                    return new int[]{i, midPointer};
                 }
             }
         }
