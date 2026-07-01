@@ -18,10 +18,6 @@ mvn compile       # compile only
 mvn test          # run all tests
 ```
 
-## Known Pre-existing Failures
-
-`pattern.arrays.twopointers.PairWithTargetSumTest` has 4 failing tests due to bugs in the implementation, not the test setup. Do not treat these as regressions.
-
 ## Conventions
 
 - Each problem is a self-contained class; no shared utilities across packages
