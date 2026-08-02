@@ -7,8 +7,41 @@ public class Trie {
         this.root = root;
     }
 
+    void insert(String key) {
+        TrieNode currentNode = root;
+        for (int i = 0; i < key.length(); i++) {
+            int index = key.charAt(i) - 'a';
+            if (currentNode.trieNodes[index] == null) {
+                currentNode.trieNodes[index] = new TrieNode();
+            }
+            currentNode = currentNode.trieNodes[index];
+        }
+        currentNode.isEndOfWord = true;
+    }
+
+    boolean search(String key) {
+        TrieNode currentNode = root;
+        for (int i = 0; i < key.length(); i++) {
+            int index = key.charAt(i) - 'a';
+            if (currentNode.trieNodes[index] == null) {
+                return false;
+            }
+            currentNode = currentNode.trieNodes[index];
+        }
+        return currentNode.isEndOfWord;
+    }
+
+
+    private static class TrieNode<E> {
+        boolean isEndOfWord = false;
+        TrieNode[] trieNodes = new TrieNode[26];
+
+        public TrieNode() {
+        }
+    }
+
     // Driver
-    public static void main(String args[]) {
+    static void main(String args[]) {
         // Input keys (use only 'a' through 'z' and lower case)
         String keys[] = {"the", "a", "there", "answer", "any",
                 "by", "bye", "their"};
@@ -42,35 +75,6 @@ public class Trie {
 
     }
 
-    void insert(String key) {
-        TrieNode currentNode = root;
-        for (int i = 0; i < key.length(); i++) {
-            int index = key.charAt(i) - 'a';
-            if (currentNode.trieNodes[index] == null) {
-                currentNode.trieNodes[index] = new TrieNode();
-            }
-            currentNode = currentNode.trieNodes[index];
-        }
-        currentNode.isEndOfWord = true;
-    }
-
-    boolean search(String key) {
-        TrieNode currentNode = root;
-        for (int i = 0; i < key.length(); i++) {
-            int index = key.charAt(i) - 'a';
-            if (currentNode.trieNodes[index] == null) {
-                return false;
-            }
-            currentNode = currentNode.trieNodes[index];
-        }
-        return currentNode.isEndOfWord;
-    }
 }
 
-class TrieNode {
-    boolean isEndOfWord = false;
-    TrieNode[] trieNodes = new TrieNode[26];
 
-    public TrieNode() {
-    }
-}

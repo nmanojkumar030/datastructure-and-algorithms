@@ -3,7 +3,7 @@ package datastructures.linkedlist;
 
 public class LinkedList<E> {
 
-    private Node head = null;
+    private Node<E> head = null;
     private int length = 0;
 
     public int getLength() {
@@ -22,7 +22,7 @@ public class LinkedList<E> {
         if (head == null) {
             head = node;
         } else {
-            Node temp = head;
+            Node<E> temp = head;
             while (temp.getNextPointer() != null) {
                 temp = temp.getNextPointer();
             }
@@ -40,14 +40,14 @@ public class LinkedList<E> {
 
         } else {
             if (pos > length) {
-                Node temp = head;
+                Node<E> temp = head;
                 while (temp.getNextPointer() != null) {
                     temp = temp.getNextPointer();
                 }
                 temp.setNextPointer(node);
                 length++;
             } else {
-                Node temp = head;
+                Node<E> temp = head;
                 int index = 0;
                 while (temp.getNextPointer() != null && pos != index) {
                     temp = temp.getNextPointer();
@@ -60,11 +60,10 @@ public class LinkedList<E> {
         }
     }
 
-    public Node removeFromBegin() {
-        Node temp = head.getNextPointer();
+    public void removeFromBegin() {
+        Node<E> temp = head.getNextPointer();
         temp = head;
         temp.setNextPointer(null);
-        return temp;
     }
 
     /**
@@ -72,13 +71,13 @@ public class LinkedList<E> {
      */
     private static class Node<E> {
         private E data;
-        private Node nextPointer;
+        private Node<E> nextPointer;
 
         public Node(E data) {
             this.data = data;
         }
 
-        public Node(E data, Node nextPointer) {
+        public Node(E data, Node<E> nextPointer) {
             this.data = data;
             this.nextPointer = nextPointer;
         }
@@ -87,7 +86,7 @@ public class LinkedList<E> {
             this.data = data;
         }
 
-        public void setNextPointer(Node nextPointer) {
+        public void setNextPointer(Node<E> nextPointer) {
             this.nextPointer = nextPointer;
         }
 
@@ -95,7 +94,7 @@ public class LinkedList<E> {
             return data;
         }
 
-        public Node getNextPointer() {
+        public Node<E> getNextPointer() {
             return nextPointer;
         }
     }

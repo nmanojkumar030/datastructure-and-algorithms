@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 
 public class FizzBuzz {
 
-    public static void main(String[] args) throws IOException {
+    static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String line1 = br.readLine();
         int n = Integer.parseInt(line1);

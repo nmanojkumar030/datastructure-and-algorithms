@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class AnagramsInList {
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         String[] inputArray = new String[]{"cat", "dog", "god", "cat"};
         List<List<String>> anagramsList = findAllAnagrams(inputArray);
         anagramsList.forEach(System.out::println);

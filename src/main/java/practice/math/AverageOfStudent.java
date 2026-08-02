@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class AverageOfStudent {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         String[][] studentArray = new String[][]{
                 {"Charles", "65"},
                 {"David", "100"},

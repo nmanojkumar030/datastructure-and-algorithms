@@ -11,7 +11,7 @@ public class NumberReverse {
         return reverse;
     }
 
-    public static void main(String a[]) {
+    static void main(String a[]) {
         NumberReverse nr = new NumberReverse();
         System.out.println("Result: " + nr.reverseNumber(123));
     }

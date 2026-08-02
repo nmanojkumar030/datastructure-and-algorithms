@@ -3,7 +3,7 @@ package practice.arrays;
 import java.util.PriorityQueue;
 
 public class SecondSmallestNumber {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         int[] inputArray = new int[] { 4, 2, 1, 3, 5 };
 
         System.out.println(findSecondSmallestNumber(inputArray));
@@ -41,7 +41,6 @@ public class SecondSmallestNumber {
             minHeap.poll();
         }
 
-        int secondSmallest = minHeap.isEmpty() ? -1 : minHeap.poll();
-        return secondSmallest;
+        return minHeap.isEmpty() ? -1 : minHeap.poll();
     }
 }

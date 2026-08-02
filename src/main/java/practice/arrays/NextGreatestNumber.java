@@ -7,16 +7,16 @@ import java.util.Stack;
 /**
  * Input - [3, 4, 5, 2, 6, 8]
  * Output -
- * 2-6
- * 3-4
- * 4-5
- * 5-6
- * 6-8
- * 8--1
+ * 2->6
+ * 3->4
+ * 4->5
+ * 5->6
+ * 6->8
+ * 8->-1
  */
 
 public class NextGreatestNumber {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         Integer[] integers = new Integer[]{3, 4, 5, 2, 6, 8};
         Map<Integer, Integer> nextGreatestNumberMap = findNextGreatestNumbersWithStack(integers);
         for (Map.Entry entry : nextGreatestNumberMap.entrySet()) {
@@ -24,7 +24,7 @@ public class NextGreatestNumber {
         }
 
         Integer[] integers2 = new Integer[]{8, 7, 9};
-        Map<Integer, Integer> nextGreatestNumberMap2 = findNextGreatestNumbersWithStack2(integers2);
+        Map<Integer, Integer> nextGreatestNumberMap2 = findNextGreatestNumbersWithStack(integers2);
         for (Map.Entry entry : nextGreatestNumberMap2.entrySet()) {
             System.out.println(entry.getKey() + "-" + entry.getValue());
         }
@@ -105,43 +105,4 @@ public class NextGreatestNumber {
         }
         return greatestNumberMap;
     }
-
-    private static Map<Integer, Integer> findNextGreatestNumbersWithStack2(Integer[] integers) {
-        Map<Integer, Integer> greatestNumberMap = new HashMap<>();
-        if (integers == null || integers.length == 0) {
-            return greatestNumberMap;
-        }
-
-        Stack<Integer> stack = new Stack<>();
-        stack.push(integers[0]);
-
-        for (int i = 1; i < integers.length; i++) {
-            int currentElement = integers[i];
-
-            if (!stack.empty()) {
-                int stackTopElement = stack.pop();
-
-                while (currentElement > stackTopElement) {
-                    greatestNumberMap.put(stackTopElement, currentElement);
-
-                    if (stack.isEmpty()) {
-                        break;
-                    }
-                    stackTopElement = stack.pop();
-                }
-
-                if (currentElement < stackTopElement) {
-                    stack.push(stackTopElement);
-                }
-            }
-            stack.push(currentElement);
-        }
-
-        while (!stack.empty()) {
-            greatestNumberMap.put(stack.pop(), -1);
-        }
-
-        return greatestNumberMap;
-    }
-
 }

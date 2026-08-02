@@ -2,10 +2,7 @@ package algorithms.sorting;
 
 public class ArrayBubbleSort {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
+	static void main(String[] args) {
 		ArrayBubbleSort arrayBubbleSort = new ArrayBubbleSort(100);
 
 		arrayBubbleSort.insert(10);
@@ -20,11 +17,8 @@ public class ArrayBubbleSort {
 		arrayBubbleSort.insert(1);
 
 		arrayBubbleSort.display();
-
 		arrayBubbleSort.bubbleSort();
-
 		arrayBubbleSort.display();
-
 	}
 
 	private int[] array;
@@ -71,5 +65,4 @@ public class ArrayBubbleSort {
 			}
 		}
 	}
-
 }

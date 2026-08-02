@@ -6,11 +6,7 @@ import java.io.InputStreamReader;
 
 public class TrailingZeros {
 
-    /**
-     * @param args
-     * @throws IOException
-     */
-    public static void main(String[] args) throws IOException {
+    static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String line = br.readLine();
         int n = Integer.parseInt(line);

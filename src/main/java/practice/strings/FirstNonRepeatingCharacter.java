@@ -7,7 +7,7 @@ import java.util.Map;
  * Example- "apple" -> 'a', "ababc" -> 'c', 'aaccc' -> 0
  */
 public class FirstNonRepeatingCharacter {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         String input = "pineapple";
         char ch = findFirstNonRepeatingCharacter(input);
         System.out.println(ch);

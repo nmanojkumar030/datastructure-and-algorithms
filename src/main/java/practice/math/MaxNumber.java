@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MaxNumber {
-    public static void main(String[] args) throws IOException {
+    static void main(String[] args) {
 
         List<Integer> integers = Arrays.asList(948, 560, 590, 700);
         int max = 0;

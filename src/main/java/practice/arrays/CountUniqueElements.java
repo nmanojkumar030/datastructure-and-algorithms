@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class CountUniqueElements {
 
     public long countUniqueUsingStreams(List<Integer> integerList) {
-        List<Integer> sortedList = integerList.stream().sorted((n1, n2) -> n1 - n2).collect(Collectors.toList());
+        List<Integer> sortedList = integerList.stream().sorted((n1, n2) -> n1 - n2).toList();
         return sortedList.stream().distinct().count();
     }
 
@@ -28,7 +28,7 @@ public class CountUniqueElements {
     }
 
     public long countUniqueUsingManualMethod(List<Integer> integerList) {
-        List<Integer> sortedList = integerList.stream().sorted().collect(Collectors.toList());
+        List<Integer> sortedList = integerList.stream().sorted().toList();
 
         int uniqueCount = 1;
         for (int i = 1; i < sortedList.size(); i++) {
@@ -36,8 +36,6 @@ public class CountUniqueElements {
                 uniqueCount++;
             }
         }
-
         return uniqueCount;
     }
-
 }

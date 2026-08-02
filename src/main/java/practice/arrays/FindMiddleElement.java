@@ -61,7 +61,7 @@ public class FindMiddleElement {
             while (integerList.get(index) != null) {
                 index++;
             }
-        } catch (IndexOutOfBoundsException e) {
+        } catch (IndexOutOfBoundsException _) {
 
         }
         return integerList.get(index / 2);

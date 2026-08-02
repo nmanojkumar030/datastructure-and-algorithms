@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class AnagramSort {
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         String string1 = "geeksforgeeks";
         String string2 = "forgeeksgeeks";
 

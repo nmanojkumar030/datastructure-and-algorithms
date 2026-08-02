@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class MostFrequentElements {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         int[] integerArray = {6, 6, 6, 7, 7, 9};
         int k = 2;
 

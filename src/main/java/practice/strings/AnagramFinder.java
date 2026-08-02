@@ -12,20 +12,18 @@ public class AnagramFinder {
         Map<String, List<String>> group(List<String> words);
     }
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         List<String> input = Arrays.asList("cat", "dog", "god", "cat");
 
         // Lambda function to group anagrams
-        AnagramGrouper grouper = (words) -> {
-            return words.stream()
-                    .collect(Collectors.groupingBy(
-                            word -> {
-                                char[] chars = word.toLowerCase().toCharArray();
-                                Arrays.sort(chars);
-                                return new String(chars);
-                            }
-                    ));
-        };
+        AnagramGrouper grouper = (words) -> words.stream()
+                .collect(Collectors.groupingBy(
+                        word -> {
+                            char[] chars = word.toLowerCase().toCharArray();
+                            Arrays.sort(chars);
+                            return new String(chars);
+                        }
+                ));
 
         // Get grouped anagrams
         Map<String, List<String>> grouped = grouper.group(input);
