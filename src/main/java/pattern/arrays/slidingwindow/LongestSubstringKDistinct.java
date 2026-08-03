@@ -4,7 +4,7 @@ import java.util.*;
 
 public class LongestSubstringKDistinct {
     public static int findLength(String str, int k) {
-        if (str == null || str.length() == 0)
+        if (str == null || str.isEmpty())
             throw new IllegalArgumentException();
 
         int windowStart = 0, maxLength = 0;
@@ -28,7 +28,7 @@ public class LongestSubstringKDistinct {
         return maxLength;
     }
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         System.out.println("Length of the longest substring: " + LongestSubstringKDistinct.findLength("araaci", 2));
         System.out.println("Length of the longest substring: " + LongestSubstringKDistinct.findLength("araaci", 1));
         System.out.println("Length of the longest substring: " + LongestSubstringKDistinct.findLength("cbbebi", 3));

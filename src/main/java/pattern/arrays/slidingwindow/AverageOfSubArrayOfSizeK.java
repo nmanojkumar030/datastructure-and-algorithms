@@ -22,9 +22,26 @@ public class AverageOfSubArrayOfSizeK {
         int windowStart = 0;
         for (int windowEnd = 0; windowEnd < inputArray.length; windowEnd++) {
             slidingWindowSum += inputArray[windowEnd];
+
             if ((windowEnd - windowStart + 1) >= subArrayWidth) {
                 result[windowStart] = slidingWindowSum / subArrayWidth;
                 slidingWindowSum -= inputArray[windowStart];
+                windowStart++;
+            }
+        }
+        return result;
+    }
+
+    public double[] findAverageOfSubArrayOfSizeK(int[] nums, int k) {
+        double[] result = new double[nums.length - k + 1];
+        double slidingWindowSum = 0;
+        int windowStart = 0;
+        for (int windowEnd = 0; windowEnd < nums.length; windowEnd++) {
+            slidingWindowSum += nums[windowEnd];
+
+            if ((windowEnd - windowStart + 1) == k) {
+                result[windowStart] = slidingWindowSum / k;
+                slidingWindowSum -= nums[windowStart];
                 windowStart++;
             }
         }
@@ -47,22 +64,6 @@ public class AverageOfSubArrayOfSizeK {
             slidingWindowEnd++;
             if (slidingWindowEnd < inputArray.length) {
                 slidingWindowSum += inputArray[slidingWindowEnd];
-            }
-        }
-        return result;
-    }
-
-    public double[] findAverageOfSubArrayOfSizeK(int[] nums, int k) {
-        double[] result = new double[nums.length - k + 1];
-        double slidingWindowSum = 0;
-        int windowStart = 0;
-        for (int windowEnd = 0; windowEnd < nums.length; windowEnd++) {
-            slidingWindowSum += nums[windowEnd];
-
-            if ((windowEnd - windowStart + 1) == k) {
-                result[windowStart] = slidingWindowSum / k;
-                slidingWindowSum -= nums[windowStart];
-                windowStart++;
             }
         }
         return result;

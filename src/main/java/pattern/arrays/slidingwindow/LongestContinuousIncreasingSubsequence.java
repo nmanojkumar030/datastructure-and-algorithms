@@ -11,7 +11,9 @@ public class LongestContinuousIncreasingSubsequence {
             if (nums[i] > nums[i - 1]) {
                 subSequenceLength++;
             } else {
-                maxSubSequenceLength = subSequenceLength;
+                if (subSequenceLength > maxSubSequenceLength) {
+                    maxSubSequenceLength = subSequenceLength;
+                }
                 subSequenceLength = 1;
             }
         }
