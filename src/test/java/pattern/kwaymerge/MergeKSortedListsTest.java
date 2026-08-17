@@ -9,19 +9,19 @@ public class MergeKSortedListsTest {
     @Test
     public void testMergeKSortedList() {
         MergeKSortedLists mergeKSortedLists = new MergeKSortedLists();
-        MergeKSortedLists.ListNode listNode1 = new MergeKSortedLists.ListNode(2);
-        listNode1.next = new MergeKSortedLists.ListNode(6);
-        listNode1.next.next = new MergeKSortedLists.ListNode(8);
+        ListNode<Integer> listNode1 = new ListNode<Integer>(2);
+        listNode1.next = new ListNode<Integer>(6);
+        listNode1.next.next = new ListNode<Integer>(8);
 
-        MergeKSortedLists.ListNode listNode2 = new MergeKSortedLists.ListNode(3);
-        listNode2.next = new MergeKSortedLists.ListNode(6);
-        listNode2.next.next = new MergeKSortedLists.ListNode(7);
+        ListNode<Integer> listNode2 = new ListNode<Integer>(3);
+        listNode2.next = new ListNode<Integer>(6);
+        listNode2.next.next = new ListNode<Integer>(7);
 
-        MergeKSortedLists.ListNode listNode3 = new MergeKSortedLists.ListNode(1);
-        listNode3.next = new MergeKSortedLists.ListNode(3);
-        listNode3.next.next = new MergeKSortedLists.ListNode(4);
+        ListNode<Integer> listNode3 = new ListNode<Integer>(1);
+        listNode3.next = new ListNode<Integer>(3);
+        listNode3.next.next = new ListNode<Integer>(4);
 
-        MergeKSortedLists.ListNode sortedListNode = mergeKSortedLists.merge(new MergeKSortedLists.ListNode[]{listNode1, listNode2, listNode3});
+        ListNode<Integer> sortedListNode = mergeKSortedLists.merge2(new ListNode[]{listNode1, listNode2, listNode3});
         assertEquals(1, sortedListNode.data);
         assertEquals(2, sortedListNode.next.data);
         assertEquals(3, sortedListNode.next.next.data);

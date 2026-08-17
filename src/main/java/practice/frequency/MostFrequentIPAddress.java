@@ -1,6 +1,8 @@
 package practice.frequency;
 
 import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class MostFrequentIPAddress {
 
@@ -30,4 +32,20 @@ public class MostFrequentIPAddress {
         }
         return ipAddressList;
     }
+
+    public List<String> mostFrequentUsingStreams() {
+        Map<String, Long> ipCountMap = Arrays.stream(logLines)
+                .map(logLine -> logLine.split(" ")[0])
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        long mostFrequency = ipCountMap.values().stream()
+                .max(Long::compareTo)
+                .orElse(0L);
+
+        return ipCountMap.entrySet().stream()
+                .filter(entry -> entry.getValue() == mostFrequency)
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toList());
+    }
+
 }

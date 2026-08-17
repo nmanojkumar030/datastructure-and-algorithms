@@ -4,7 +4,7 @@ import java.util.Set;
 
 public class ReverseVowels {
     public String reverseVowels(String s) {
-        if (s == null || s.length() == 0) {
+        if (s == null || s.isEmpty()) {
             return s;
         }
 

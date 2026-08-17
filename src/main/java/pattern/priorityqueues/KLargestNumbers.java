@@ -38,8 +38,8 @@ public class KLargestNumbers {
     public int[] findKLargestNumbersUsingMinHeap(int[] inputArray, int kElements) {
 
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
-        for (int i = 0; i < inputArray.length; i++) {
-            minHeap.offer(inputArray[i]);
+        for (int k : inputArray) {
+            minHeap.offer(k);
 
             if (minHeap.size() > kElements) {
                 minHeap.poll();

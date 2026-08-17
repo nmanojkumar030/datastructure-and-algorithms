@@ -1,10 +1,10 @@
 package pattern.kwaymerge;
 
 public class ListNode<T> {
-    int data;
+    T data;
     ListNode<T> next;
 
-    public ListNode(int data) {
+    public ListNode(T data) {
         this.data = data;
     }
 }

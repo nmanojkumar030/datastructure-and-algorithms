@@ -35,6 +35,7 @@ public class InsertInterval {
 
         int intervalToInsertStart = intervalToInsert.getStart();
         int intervalToInsertEnd = intervalToInsert.getEnd();
+
         for (Interval interval : intervalList) {
             if (interval.getEnd() < intervalToInsertStart) {
                 mergedIntervals.add(interval);

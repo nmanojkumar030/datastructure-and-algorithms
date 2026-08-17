@@ -12,7 +12,7 @@ public class TopKFrequentNumbersTest {
 
     @Test
     public void testFindTopKFrequentNumbers() {
-        List<Integer> result = TopKFrequentNumbers.findTopKFrequentNumbers(new int[]{1, 3, 5, 12, 11, 12, 11}, 2);
+        List<Integer> result = TopKFrequentNumbers.findTopKFrequentNumbers2(new int[]{1, 3, 5, 12, 11, 12, 11}, 2);
         // top two frequent numbers should be 11 and 12 (both frequency 2). Order is not guaranteed.
         assertEquals(2, result.size());
         assertTrue(result.contains(11));

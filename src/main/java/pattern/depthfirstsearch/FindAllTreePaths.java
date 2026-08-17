@@ -22,6 +22,6 @@ public class FindAllTreePaths {
         }
         findPathSumRecursively(node.left, targetSum - node.data, allTreePaths, currentPath);
         findPathSumRecursively(node.right, targetSum-node.data, allTreePaths, currentPath);
-        currentPath.remove(currentPath.size() - 1);
+        currentPath.removeLast();
     }
 }

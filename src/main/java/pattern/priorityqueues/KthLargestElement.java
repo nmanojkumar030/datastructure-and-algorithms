@@ -14,11 +14,14 @@ public class KthLargestElement {
         }
     }
 
-    public int add(int num) {
+    public void add(int num) {
         minHeap.offer(num);
         if (minHeap.size() > k) {
              minHeap.poll();
         }
-        return minHeap.peek();
+    }
+
+    public int getKthLargestElement() {
+       return !minHeap.isEmpty() ? minHeap.peek(): -1;
     }
 }

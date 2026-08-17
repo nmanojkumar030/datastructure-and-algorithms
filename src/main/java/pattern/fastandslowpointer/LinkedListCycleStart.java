@@ -1,13 +1,16 @@
 package pattern.fastandslowpointer;
 
+import java.util.HashMap;
+import java.util.Map;
+
 // Based on Floyd's cycle finding algorithm
 public class LinkedListCycleStart {
 
     // Time Complexity - O(N), Space Complexity (1)
-    public Node findCycleStart(Node head) {
+    public Node<Integer> findCycleStart(Node<Integer> head) {
         int cycleLength = 0;
-        Node fastPointer = head;
-        Node slowPointer = head;
+        Node<Integer> fastPointer = head;
+        Node<Integer> slowPointer = head;
 
         while (null != fastPointer && null != fastPointer.nextPointer) {
             fastPointer = fastPointer.nextPointer.nextPointer;
@@ -21,9 +24,9 @@ public class LinkedListCycleStart {
         return findStart(head, cycleLength);
     }
 
-    private int findLength(Node slowPointer) {
+    private int findLength(Node<Integer> slowPointer) {
         int cycleLength = 0;
-        Node lengthPointer = slowPointer;
+        Node<Integer> lengthPointer = slowPointer;
         do {
             cycleLength++;
             lengthPointer = lengthPointer.nextPointer;
@@ -31,9 +34,9 @@ public class LinkedListCycleStart {
         return cycleLength;
     }
 
-    private Node findStart(Node head, int cycleLength) {
-        Node fastPointer = head;
-        Node slowPointer = head;
+    private Node<Integer> findStart(Node<Integer> head, int cycleLength) {
+        Node<Integer> fastPointer = head;
+        Node<Integer> slowPointer = head;
 
         while (cycleLength > 0) {
             fastPointer = fastPointer.nextPointer;
@@ -48,4 +51,16 @@ public class LinkedListCycleStart {
     }
 
 
+    public Node<Integer> findCycleStartUsingMap(Node<Integer> head) {
+        Map<Node<Integer>, Integer> map = new HashMap<>();
+        Node<Integer> temp = head;
+        while (null != temp) {
+            if (map.containsKey(temp)) {
+                break;
+            }
+            map.put(temp, temp.data);
+            temp = temp.nextPointer;
+        }
+        return temp;
+    }
 }

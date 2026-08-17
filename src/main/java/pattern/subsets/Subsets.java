@@ -1,7 +1,6 @@
 package pattern.subsets;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Subsets {
@@ -19,14 +18,4 @@ public class Subsets {
         }
         return subsetsList;
     }
-
-    public static void main(String[] args) {
-        List<List<Integer>> result = Subsets.findSubsets(Arrays.asList(new Integer[]{1, 3}));
-        System.out.println("Here is the list of subsets: " + result);
-
-        result = Subsets.findSubsets(Arrays.asList(new Integer[]{1, 5, 3}));
-        System.out.println("Here is the list of subsets: " + result);
-
-    }
-
 }

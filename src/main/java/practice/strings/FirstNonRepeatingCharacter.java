@@ -2,6 +2,8 @@ package practice.strings;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * Example- "apple" -> 'a', "ababc" -> 'c', 'aaccc' -> 0
@@ -27,5 +29,17 @@ public class FirstNonRepeatingCharacter {
             }
         }
         return firstNonRepeatCharacter;
+    }
+
+    private static char findFirstNonRepeatingCharacterUsingStreams(String input) {
+            Map<Character, Long> characterCountMap = input.chars()
+                    .mapToObj(c->(char)c)
+                    .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()));
+
+            return characterCountMap.entrySet().stream()
+                    .filter(entry -> entry.getValue() == 1)
+                    .map(Map.Entry::getKey)
+                    .findFirst()
+                    .orElseThrow();
     }
 }

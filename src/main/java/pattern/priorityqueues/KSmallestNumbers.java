@@ -10,6 +10,7 @@ public class KSmallestNumbers {
 
         for (int i : inputArray) {
             maxHeap.offer(i);
+
             if (maxHeap.size() > kElements) {
                 maxHeap.poll();
             }

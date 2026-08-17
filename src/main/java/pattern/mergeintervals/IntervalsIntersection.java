@@ -39,7 +39,7 @@ public class IntervalsIntersection {
     }
 
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         Interval[] input1 = new Interval[]{new Interval(1, 3), new Interval(5, 6), new Interval(7, 9)};
         Interval[] input2 = new Interval[]{new Interval(2, 3), new Interval(5, 7)};
         Interval[] result = IntervalsIntersection.merge(input1, input2);

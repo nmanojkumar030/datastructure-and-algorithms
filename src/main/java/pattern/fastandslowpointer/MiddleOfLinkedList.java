@@ -1,5 +1,7 @@
 package pattern.fastandslowpointer;
 
+import pattern.kwaymerge.ListNode;
+
 /**
  * Problem Statement#
  * Given the head of a Singly LinkedList, write a method to return the middle node of the LinkedList.
@@ -16,37 +18,28 @@ package pattern.fastandslowpointer;
  * Output: 4
  */
 public class MiddleOfLinkedList {
-    public static ListNode findMiddle(ListNode head) {
-        ListNode slow = head;
-        ListNode fast = head;
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
+    public static Node<Integer> findMiddle(Node<Integer> head) {
+        Node<Integer> slow = head;
+        Node<Integer> fast = head;
+        while (fast != null && fast.nextPointer != null) {
+            slow = slow.nextPointer;
+            fast = fast.nextPointer.nextPointer;
         }
         return slow;
     }
 
-    public static void main(String[] args) {
-        ListNode head = new ListNode(1);
-        head.next = new ListNode(2);
-        head.next.next = new ListNode(3);
-        head.next.next.next = new ListNode(4);
-        head.next.next.next.next = new ListNode(5);
-        System.out.println("Middle Node: " + MiddleOfLinkedList.findMiddle(head).value);
+    static void main(String[] args) {
+        Node<Integer> head = new Node<>(1);
+        head.nextPointer = new Node<Integer>(2);
+        head.nextPointer.nextPointer = new Node<Integer>(3);
+        head.nextPointer.nextPointer.nextPointer = new Node<Integer>(4);
+        head.nextPointer.nextPointer.nextPointer.nextPointer = new Node<Integer>(5);
+        System.out.println("Middle Node: " + MiddleOfLinkedList.findMiddle(head).data);
 
-        head.next.next.next.next.next = new ListNode(6);
-        System.out.println("Middle Node: " + MiddleOfLinkedList.findMiddle(head).value);
+        head.nextPointer.nextPointer.nextPointer.nextPointer.nextPointer = new Node<Integer>(6);
+        System.out.println("Middle Node: " + MiddleOfLinkedList.findMiddle(head).data);
 
-        head.next.next.next.next.next.next = new ListNode(7);
-        System.out.println("Middle Node: " + MiddleOfLinkedList.findMiddle(head).value);
-    }
-}
-
-class ListNode {
-    int value = 0;
-    ListNode next;
-
-    ListNode(int value) {
-        this.value = value;
+        head.nextPointer.nextPointer.nextPointer.nextPointer.nextPointer.nextPointer = new Node<Integer>(7);
+        System.out.println("Middle Node: " + MiddleOfLinkedList.findMiddle(head).data);
     }
 }

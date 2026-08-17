@@ -18,7 +18,7 @@ class ReverseVowelsTest {
         ReverseVowels reverseVowels = new ReverseVowels();
         String result = reverseVowels.reverseVowels("");
         assertNotNull(result);
-        assertEquals(result.length(), 0);
+        assertEquals(0, result.length());
     }
 
     @Test
@@ -36,4 +36,22 @@ class ReverseVowelsTest {
         assertNotNull(result);
         assertEquals("hollE", result);
     }
+
+
+    @Test
+    void ShouldReturnSameStringWhenNoVowels() {
+        ReverseVowels reverseVowels = new ReverseVowels();
+        String result = reverseVowels.reverseVowels("BbBbB");
+        assertNotNull(result);
+        assertEquals("BbBbB", result);
+    }
+
+    @Test
+    void ShouldReturnStringWhenOnlyVowels() {
+        ReverseVowels reverseVowels = new ReverseVowels();
+        String result = reverseVowels.reverseVowels("aAAeEO");
+        assertNotNull(result);
+        assertEquals("OEeAAa", result);
+    }
+
 }

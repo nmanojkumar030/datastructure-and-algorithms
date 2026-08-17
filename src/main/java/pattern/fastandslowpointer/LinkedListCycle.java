@@ -12,10 +12,10 @@ import java.util.Map;
 public class LinkedListCycle {
 
     // Time Complexity O(N), Space Complexity O(1)
-    public boolean hasCycle(Node head) {
+    public boolean hasCycle(Node<Integer> head) {
         boolean result = false;
-        Node fastPointer = head;
-        Node slowPointer = head;
+        Node<Integer> fastPointer = head;
+        Node<Integer> slowPointer = head;
 
         while (null != fastPointer && null != fastPointer.nextPointer) {
             fastPointer = fastPointer.nextPointer.nextPointer;
@@ -30,10 +30,10 @@ public class LinkedListCycle {
     }
 
     // Time Complexity - O(N), Space Complexity - O(1)
-    public int findCycleLength(Node head) {
+    public int findCycleLength(Node<Integer> head) {
         int cycleLength = 0;
-        Node fastPointer = head;
-        Node slowPointer = head;
+        Node<Integer> fastPointer = head;
+        Node<Integer> slowPointer = head;
 
         while (null != fastPointer && null != fastPointer.nextPointer) {
             fastPointer = fastPointer.nextPointer.nextPointer;
@@ -44,13 +44,12 @@ public class LinkedListCycle {
                 break;
             }
         }
-
         return cycleLength;
     }
 
-    private int findLength(Node slowPointer) {
+    private int findLength(Node<Integer> slowPointer) {
         int cycleLength = 0;
-        Node lengthPointer = slowPointer;
+        Node<Integer> lengthPointer = slowPointer;
         do {
             cycleLength++;
             lengthPointer = lengthPointer.nextPointer;
@@ -59,10 +58,10 @@ public class LinkedListCycle {
     }
 
     // Time Complexity O(N), Space Complexity O(N)
-    public boolean hasCycleWithHashMap(Node head) {
+    public boolean hasCycleWithHashMap(Node<Integer> head) {
         boolean result = false;
-        Map<Node, Integer> map = new HashMap<>();
-        Node temp = head.nextPointer;
+        Map<Node<Integer>, Integer> map = new HashMap<>();
+        Node<Integer> temp = head;
         while (null != temp) {
             if (map.containsKey(temp)) {
                 result = true;

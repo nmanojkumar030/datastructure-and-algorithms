@@ -14,6 +14,7 @@ public class SumOfPathNumbers {
         if (node.left == null && node.right == null) {
             return targetSum;
         }
-        return sumNumbersRecursively(node.left, targetSum) + sumNumbersRecursively(node.right, targetSum);
+        return sumNumbersRecursively(node.left, targetSum) +
+                sumNumbersRecursively(node.right, targetSum);
     }
 }

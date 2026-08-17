@@ -12,17 +12,17 @@ import java.util.PriorityQueue;
  */
 public class MergeKSortedLists {
 
-    public ListNode merge(ListNode[] lists) {
-        ListNode resultHead = null;
-        ListNode resultTail = null;
-        PriorityQueue<ListNode> minHeap = new PriorityQueue<>((o1, o2) -> o1.data - o2.data);
+    public ListNode<Integer> merge(ListNode<Integer>[] lists) {
+        ListNode<Integer> resultHead = null;
+        ListNode<Integer> resultTail = null;
+        PriorityQueue<ListNode<Integer>> minHeap = new PriorityQueue<>((o1, o2) -> o1.data - o2.data);
 
-        for (ListNode listNode : lists) {
+        for (ListNode<Integer> listNode : lists) {
             minHeap.offer(listNode);
         }
 
         while (!minHeap.isEmpty()) {
-            ListNode node = minHeap.poll();
+            ListNode<Integer> node = minHeap.poll();
             if (resultHead == null) {
                 resultHead = node;
                 resultTail = node;
@@ -38,12 +38,36 @@ public class MergeKSortedLists {
         return resultHead;
     }
 
-    static class ListNode {
-        int data;
-        ListNode next;
+    public ListNode<Integer> merge2(ListNode<Integer>[] lists) {
+        ListNode<Integer>  result = null;
 
-        public ListNode(int data) {
-            this.data = data;
+        if (lists == null || lists.length == 0) {
+            return result;
         }
+
+        PriorityQueue<ListNode<Integer>> minHeap = new PriorityQueue<>((o1, o2) -> o1.data - o2.data);
+
+        for (ListNode<Integer> listNode : lists) {
+            ListNode<Integer> currentNode = listNode;
+
+            while (currentNode != null) {
+                minHeap.offer(currentNode);
+                currentNode = currentNode.next;
+            }
+        }
+
+        ListNode<Integer> tailNode = null;
+        while (!minHeap.isEmpty()) {
+            ListNode<Integer> node = minHeap.poll();
+            if (result == null) {
+                result = node;
+                tailNode = node;
+            } else {
+                tailNode.next = node;
+                tailNode = node;
+            }
+        }
+
+        return result;
     }
 }

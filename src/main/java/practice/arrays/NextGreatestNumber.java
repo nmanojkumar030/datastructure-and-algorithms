@@ -59,15 +59,15 @@ public class NextGreatestNumber {
      * <p>
      * <p>
      * Stack - 5 2
-     * 2 < 6  2 - 6
+     * 6 > 2  2 - 6
      * <p>
      * <p>
      * Stack - 5
-     * 5 < 6  5 - 6
+     * 6 > 5  5 - 6
      * <p>
      * <p>
      * Stack - 6
-     * 8 < 6  6 - 8
+     * 8 > 6  6 - 8
      * <p>
      * Stack 8
      * end of array, 8 - -1
