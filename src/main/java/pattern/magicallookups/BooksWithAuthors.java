@@ -24,7 +24,7 @@ public class BooksWithAuthors {
         for (Book book : books) {
             for (Author author : authors) {
                 if (book.getAuthorId().equalsIgnoreCase(author.getAuthorId())) {
-                    bookAuthorMap.put(book.getTitle(), author.getAuthorId());
+                    bookAuthorMap.put(book.getTitle(), author.getAuthorName());
                     break;
                 }
             }
