@@ -38,8 +38,9 @@ public class ZigZagTraversal {
                 TreeNode node = levelQueue.poll();
                 if (leftToRight) {
                     levelList.add(node);
+                } else {
+                    levelList.add(0, node);
                 }
-                levelList.add(0, node);
                 if (null != node.left) {
                     levelQueue.offer(node.left);
                 }
@@ -48,7 +49,7 @@ public class ZigZagTraversal {
                 }
             }
             result.add(levelList);
-            leftToRight = false;
+            leftToRight = !leftToRight;
         }
         return result;
     }

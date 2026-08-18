@@ -10,9 +10,9 @@ public class BinarySearchTree {
             if (node.getData() == key) {
                 System.out.println("Key found!!");
             } else if (node.getData() > key) {
-                findThroughRecursion(key, node.getRight());
-            } else if (node.getData() < key) {
                 findThroughRecursion(key, node.getLeft());
+            } else if (node.getData() < key) {
+                findThroughRecursion(key, node.getRight());
             }
         }
     }
@@ -24,10 +24,11 @@ public class BinarySearchTree {
             if (currentNode.getData() == key) {
                 found = true;
                 System.out.println("Key found!");
+                break;
             } else if (currentNode.getData() < key) {
-                currentNode = currentNode.getLeft();
-            } else if (currentNode.getData() > key) {
                 currentNode = currentNode.getRight();
+            } else if (currentNode.getData() > key) {
+                currentNode = currentNode.getLeft();
             }
         }
 

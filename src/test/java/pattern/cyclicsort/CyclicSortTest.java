@@ -35,4 +35,24 @@ public class CyclicSortTest {
         assertEquals(5, inputArray[4]);
         assertEquals(6, inputArray[5]);
     }
+
+    @Test
+    public void testSort_emptyArray() {
+        CyclicSort cyclicSort = new CyclicSort();
+        int[] inputArray = new int[]{};
+
+        cyclicSort.sort(inputArray);
+
+        assertEquals(0, inputArray.length);
+    }
+
+    @Test
+    public void testSort_singleElementArray() {
+        CyclicSort cyclicSort = new CyclicSort();
+        int[] inputArray = new int[]{1};
+
+        cyclicSort.sort(inputArray);
+
+        assertEquals(1, inputArray[0]);
+    }
 }
