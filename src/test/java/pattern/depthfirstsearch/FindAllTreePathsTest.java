@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class FindAllTreePathsTest {
 
@@ -21,6 +22,16 @@ class FindAllTreePathsTest {
         List<List<Integer>> result = findAllTreePaths.findAllPathSum(root, 23);
 
         assertEquals(2, result.size());
+        assertTrue(result.contains(List.of(12, 7, 4)));
+        assertTrue(result.contains(List.of(12, 1, 10)));
+    }
+
+    @Test
+    public void findAllPathSumShouldReturnEmptyListWhenTreeIsNull() {
+        FindAllTreePaths findAllTreePaths = new FindAllTreePaths();
+        List<List<Integer>> result = findAllTreePaths.findAllPathSum(null, 23);
+
+        assertEquals(0, result.size());
     }
 
 

@@ -7,7 +7,7 @@ public class PathWithGivenSequence {
     }
 
     private boolean findPathWithGivenSequenceRecursive(TreeNode node, int[] sequence, int sequenceIndex) {
-        if (node == null) {
+        if (node == null || sequenceIndex >= sequence.length) {
             return false;
         }
 

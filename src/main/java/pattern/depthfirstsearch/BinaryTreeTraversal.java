@@ -14,9 +14,9 @@ public class BinaryTreeTraversal {
         if (node == null) {
             return;
         }
-        list.add(node.getData());
-        traversePreOrderRecursively(node.getLeft(), list);
-        traversePreOrderRecursively(node.getRight(), list);
+        list.add(node.data);
+        traversePreOrderRecursively(node.left, list);
+        traversePreOrderRecursively(node.right, list);
     }
 
     public List<Integer> binaryTreePostorderTraversal(TreeNode root) {
@@ -29,14 +29,14 @@ public class BinaryTreeTraversal {
         if (node == null) {
             return;
         }
-        traversePostOrderRecursively(node.getLeft(), list);
-        traversePostOrderRecursively(node.getRight(), list);
-        list.add(node.getData());
+        traversePostOrderRecursively(node.left, list);
+        traversePostOrderRecursively(node.right, list);
+        list.add(node.data);
     }
 
     public List<Integer> binaryTreeInorderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<>();
-        traverseInorderRecursively(root.getLeft(), list);
+        traverseInorderRecursively(root, list);
         return list;
     }
 
@@ -44,9 +44,9 @@ public class BinaryTreeTraversal {
         if (node == null) {
             return;
         }
-        traverseInorderRecursively(node.getLeft(), list);
-        list.add(node.getData());
-        traverseInorderRecursively(node.getRight(), list);
+        traverseInorderRecursively(node.left, list);
+        list.add(node.data);
+        traverseInorderRecursively(node.right, list);
     }
 
     public List<List<Integer>> binaryTreeLevelOrderTraversal(TreeNode root) {
@@ -62,12 +62,12 @@ public class BinaryTreeTraversal {
             List<Integer> levelList = new ArrayList<>();
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
-                levelList.add(node.getData());
-                if (node.getLeft() != null) {
-                    queue.offer(node.getLeft());
+                levelList.add(node.data);
+                if (node.left != null) {
+                    queue.offer(node.left);
                 }
-                if (node.getRight() != null) {
-                    queue.offer(node.getRight());
+                if (node.right != null) {
+                    queue.offer(node.right);
                 }
             }
             list.add(levelList);
@@ -89,12 +89,12 @@ public class BinaryTreeTraversal {
             int size = queue.size();
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
-                levelList.add(node.getData());
-                if (node.getLeft()!= null){
-                    queue.offer(node.getLeft());
+                levelList.add(node.data);
+                if (node.left != null){
+                    queue.offer(node.left);
                 }
-                if (node.getRight()!= null){
-                    queue.offer(node.getRight());
+                if (node.right != null){
+                    queue.offer(node.right);
                 }
             }
             if (count % 2 == 0){
@@ -119,47 +119,17 @@ public class BinaryTreeTraversal {
             int size = queue.size();
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
-                levelList.add(node.getData());
-                if (node.getLeft()!= null){
-                    queue.offer(node.getLeft());
+                levelList.add(node.data);
+                if (node.left != null){
+                    queue.offer(node.left);
                 }
-                if (node.getRight()!= null){
-                    queue.offer(node.getRight());
+                if (node.right != null){
+                    queue.offer(node.right);
                 }
             }
             list.add(levelList);
         }
         Collections.reverse(list);
         return list;
-    }
-
-    private class TreeNode {
-        int data;
-        TreeNode left;
-        TreeNode right;
-
-        public TreeNode(int data) {
-            this.data = data;
-        }
-
-        public int getData() {
-            return data;
-        }
-
-        public TreeNode getLeft() {
-            return left;
-        }
-
-        public void setLeft(TreeNode left) {
-            this.left = left;
-        }
-
-        public TreeNode getRight() {
-            return right;
-        }
-
-        public void setRight(TreeNode right) {
-            this.right = right;
-        }
     }
 }
