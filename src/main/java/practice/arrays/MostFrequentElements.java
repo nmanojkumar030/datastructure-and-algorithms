@@ -14,7 +14,7 @@ public class MostFrequentElements {
         Arrays.stream(findKMostFrequentElementsUsingStreams(integerArray, k)).forEach(System.out::println);
     }
 
-    private static int[] findKMostFrequentElements(int[] integerArray, int k) {
+    public static int[] findKMostFrequentElements(int[] integerArray, int k) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int num : integerArray) {
             map.put(num, map.getOrDefault(num, 0) + 1);
@@ -30,7 +30,7 @@ public class MostFrequentElements {
         return result;
     }
 
-    private static int[] findKMostFrequentElementsUsingPriorityQueue(int[] integerArray, int k) {
+    public static int[] findKMostFrequentElementsUsingPriorityQueue(int[] integerArray, int k) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int num : integerArray) {
             map.put(num, map.getOrDefault(num, 0) + 1);
@@ -48,7 +48,7 @@ public class MostFrequentElements {
         return result;
     }
 
-    private static int[] findKMostFrequentElementsUsingStreams(int[] integerArray, int k) {
+    public static int[] findKMostFrequentElementsUsingStreams(int[] integerArray, int k) {
         return Arrays.stream(integerArray)
                 .boxed()
                 .collect(Collectors.groupingBy(

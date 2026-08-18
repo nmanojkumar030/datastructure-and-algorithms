@@ -15,7 +15,7 @@ public class FirstNonRepeatingCharacter {
         System.out.println(ch);
     }
 
-    private static char findFirstNonRepeatingCharacter(String input) {
+    public static char findFirstNonRepeatingCharacter(String input) {
         Map<Character, Integer> characterCountMap = new LinkedHashMap<>();
         for (int i = 0; i < input.length(); i++) {
             characterCountMap.put(input.charAt(i), characterCountMap.getOrDefault(input.charAt(i), 0) + 1);
@@ -31,7 +31,7 @@ public class FirstNonRepeatingCharacter {
         return firstNonRepeatCharacter;
     }
 
-    private static char findFirstNonRepeatingCharacterUsingStreams(String input) {
+    public static char findFirstNonRepeatingCharacterUsingStreams(String input) {
             Map<Character, Long> characterCountMap = input.chars()
                     .mapToObj(c->(char)c)
                     .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()));

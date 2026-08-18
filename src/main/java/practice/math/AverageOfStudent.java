@@ -22,7 +22,7 @@ public class AverageOfStudent {
         System.out.println("Maximum Average : " + maxAverage);
     }
 
-    private static double calculateAverage(String[][] studentArray) {
+    public static double calculateAverage(String[][] studentArray) {
         Map<String, List<Integer>> studentMarksMap = new HashMap<>();
 
         for (String[] row : studentArray) {
@@ -53,7 +53,7 @@ public class AverageOfStudent {
         return maxAverage;
     }
 
-    private static double calculateAverageOfEachStudent(String[][] marksOfStudents) {
+    public static double calculateAverageOfEachStudent(String[][] marksOfStudents) {
         Map<String, Double> averageOfEachStudent = Arrays.stream(marksOfStudents)
                 .collect(Collectors.groupingBy(
                         arr -> arr[0],
@@ -65,13 +65,13 @@ public class AverageOfStudent {
                 .orElse(0.0);
     }
 
-    private static double calculateAverageOfEachStudentUsingStreams(String[][] marksOfStudents) {
+    public static double calculateAverageOfEachStudentUsingStreams(String[][] marksOfStudents) {
         Map<String, Double> averageOfEachStudent = Arrays.stream(marksOfStudents)
                 .collect(Collectors.groupingBy(arr -> arr[0], Collectors.averagingDouble(arr -> Double.parseDouble(arr[1]))));
 
         return averageOfEachStudent.entrySet()
                 .stream()
-                .max((e1, e2)-> Double.compare(e2.getValue() , e1.getValue()))
+                .max((e1, e2) -> Double.compare(e1.getValue(), e2.getValue()))
                 .map(Map.Entry::getValue)
                 .orElse(0.0);
     }

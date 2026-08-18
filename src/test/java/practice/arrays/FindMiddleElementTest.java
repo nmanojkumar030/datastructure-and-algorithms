@@ -105,4 +105,44 @@ class FindMiddleElementTest {
         assertEquals(3, findMiddleElement.findTheMiddleElementUsingEnhancedForLoop(integerList));
     }
 
+    @Test
+    public void shouldThrowExceptionWhenListIsEmptyUsingWhileLoop() {
+        List<Integer> integerList = Collections.emptyList();
+        FindMiddleElement findMiddleElement = new FindMiddleElement();
+        assertThrows(IllegalArgumentException.class,
+                () -> findMiddleElement.findTheMiddleElementUsingWhileLoop(integerList));
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenListIsNullUsingWhileLoop() {
+        FindMiddleElement findMiddleElement = new FindMiddleElement();
+        assertThrows(IllegalArgumentException.class,
+                () -> findMiddleElement.findTheMiddleElementUsingWhileLoop(null));
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenListIsEmptyUsingEnhancedForLoop() {
+        List<Integer> integerList = Collections.emptyList();
+        FindMiddleElement findMiddleElement = new FindMiddleElement();
+        assertThrows(IllegalArgumentException.class,
+                () -> findMiddleElement.findTheMiddleElementUsingEnhancedForLoop(integerList));
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenListIsNullUsingEnhancedForLoop() {
+        FindMiddleElement findMiddleElement = new FindMiddleElement();
+        assertThrows(IllegalArgumentException.class,
+                () -> findMiddleElement.findTheMiddleElementUsingEnhancedForLoop(null));
+    }
+
+    @Test
+    public void shouldReturnTheOnlyElementWhenListHasSingleElement() {
+        List<Integer> integerList = List.of(42);
+        FindMiddleElement findMiddleElement = new FindMiddleElement();
+        assertEquals(42, findMiddleElement.findTheMiddleElementUsingStreams(integerList));
+        assertEquals(42, findMiddleElement.findTheMiddleElementUsingIterator(integerList));
+        assertEquals(42, findMiddleElement.findTheMiddleElementUsingWhileLoop(integerList));
+        assertEquals(42, findMiddleElement.findTheMiddleElementUsingEnhancedForLoop(integerList));
+    }
+
 }

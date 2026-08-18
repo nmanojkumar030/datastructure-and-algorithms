@@ -14,7 +14,7 @@ public class AnagramsInList {
         anagramsList.forEach(System.out::println);
     }
 
-    private static List<List<String>> findAllAnagrams(String[] inputArray) {
+    public static List<List<String>> findAllAnagrams(String[] inputArray) {
         List<List<String>> anagramsList = new ArrayList<>();
         Map<String, List<String>> anagramsMap = new HashMap<>();
 

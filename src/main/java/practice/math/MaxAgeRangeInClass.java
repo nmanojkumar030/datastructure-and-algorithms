@@ -28,7 +28,7 @@ public class MaxAgeRangeInClass {
 
         return summaryStatisticsMap.entrySet()
                 .stream()
-                .max((e1, e2) -> (e2.getValue().getMax() - e2.getValue().getMin()) - (e1.getValue().getMax() - e1.getValue().getMin()))
+                .max((e1, e2) -> (e1.getValue().getMax() - e1.getValue().getMin()) - (e2.getValue().getMax() - e2.getValue().getMin()))
                 .map(Map.Entry::getKey)
                 .orElse(0);
     }
