@@ -60,7 +60,8 @@ public class KLargestNumbers {
         int[] result = new int[kElements];
         Arrays.sort(inputArray);
         int j = 0;
-        for (int i = inputArray.length - 1; i >= inputArray.length - kElements; i--) {
+        int lowerBound = Math.max(0, inputArray.length - kElements);
+        for (int i = inputArray.length - 1; i >= lowerBound; i--) {
             result[j++] = inputArray[i];
         }
         return result;

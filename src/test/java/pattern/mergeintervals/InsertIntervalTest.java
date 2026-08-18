@@ -62,4 +62,66 @@ public class InsertIntervalTest {
         assertEquals(5, result.get(1).getStart());
         assertEquals(7, result.get(1).getEnd());
     }
+
+    @Test
+    public void testInsertIntoEmptyList() {
+        InsertInterval insertInterval = new InsertInterval();
+        List<Interval> result = insertInterval.insert(new ArrayList<Interval>(), new Interval(4, 6));
+
+        assertEquals(1, result.size());
+        assertEquals(4, result.get(0).getStart());
+        assertEquals(6, result.get(0).getEnd());
+    }
+
+    @Test
+    public void testInsertBeforeAllExistingIntervals() {
+        List<Interval> input = new ArrayList<Interval>();
+        input.add(new Interval(5, 7));
+        input.add(new Interval(8, 12));
+
+        InsertInterval insertInterval = new InsertInterval();
+        List<Interval> result = insertInterval.insert(input, new Interval(1, 3));
+
+        assertEquals(3, result.size());
+        assertEquals(1, result.get(0).getStart());
+        assertEquals(3, result.get(0).getEnd());
+        assertEquals(5, result.get(1).getStart());
+        assertEquals(7, result.get(1).getEnd());
+        assertEquals(8, result.get(2).getStart());
+        assertEquals(12, result.get(2).getEnd());
+    }
+
+    @Test
+    public void testInsertAfterAllExistingIntervals() {
+        List<Interval> input = new ArrayList<Interval>();
+        input.add(new Interval(1, 3));
+        input.add(new Interval(5, 7));
+
+        InsertInterval insertInterval = new InsertInterval();
+        List<Interval> result = insertInterval.insert(input, new Interval(9, 12));
+
+        assertEquals(3, result.size());
+        assertEquals(1, result.get(0).getStart());
+        assertEquals(3, result.get(0).getEnd());
+        assertEquals(5, result.get(1).getStart());
+        assertEquals(7, result.get(1).getEnd());
+        assertEquals(9, result.get(2).getStart());
+        assertEquals(12, result.get(2).getEnd());
+    }
+
+    @Test
+    public void testInsertTouchingExistingIntervalBoundary() {
+        List<Interval> input = new ArrayList<Interval>();
+        input.add(new Interval(1, 3));
+        input.add(new Interval(5, 7));
+
+        InsertInterval insertInterval = new InsertInterval();
+        List<Interval> result = insertInterval.insert(input, new Interval(3, 4));
+
+        assertEquals(2, result.size());
+        assertEquals(1, result.get(0).getStart());
+        assertEquals(4, result.get(0).getEnd());
+        assertEquals(5, result.get(1).getStart());
+        assertEquals(7, result.get(1).getEnd());
+    }
 }

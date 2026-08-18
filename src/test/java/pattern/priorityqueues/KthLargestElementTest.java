@@ -20,4 +20,24 @@ class KthLargestElementTest {
         Assertions.assertEquals(8, kthLargestElement.getKthLargestElement());
     }
 
+    @Test
+    void testGetKthLargestElementWhenInitialArrayShorterThanK() {
+        KthLargestElement kthLargestElement = new KthLargestElement(new int[]{4, 5}, 3);
+        Assertions.assertEquals(4, kthLargestElement.getKthLargestElement());
+    }
+
+    @Test
+    void testGetKthLargestElementWhenInitialArrayIsEmpty() {
+        KthLargestElement kthLargestElement = new KthLargestElement(new int[]{}, 3);
+        Assertions.assertEquals(-1, kthLargestElement.getKthLargestElement());
+    }
+
+    @Test
+    void testKthLargestElementWithDuplicateValues() {
+        KthLargestElement kthLargestElement = new KthLargestElement(new int[]{3, 3, 3, 3}, 2);
+        Assertions.assertEquals(3, kthLargestElement.getKthLargestElement());
+        kthLargestElement.add(3);
+        Assertions.assertEquals(3, kthLargestElement.getKthLargestElement());
+    }
+
 }
