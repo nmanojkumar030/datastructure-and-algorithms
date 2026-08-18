@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PathWithGivenSequenceTest {
 
     @Test
-    void findPathShouldReturnTrueWhenTheGivenSequenceMatch() {
+    void findPathShouldReturnFalseWhenTheGivenSequenceDoesNotMatch() {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(0);
         root.right = new TreeNode(1);
@@ -21,7 +21,7 @@ class PathWithGivenSequenceTest {
     }
 
     @Test
-    void findPathShouldReturnFalseWhenTheGivenSequenceDoesNotMatch() {
+    void findPathShouldReturnTrueWhenTheGivenSequenceMatch() {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(0);
         root.right = new TreeNode(1);
@@ -31,5 +31,14 @@ class PathWithGivenSequenceTest {
 
         PathWithGivenSequence pathWithGivenSequence = new PathWithGivenSequence();
         Assertions.assertTrue(pathWithGivenSequence.findPath(root, new int[]{1, 1, 6}));
+    }
+
+    @Test
+    void findPathShouldReturnFalseWhenSequenceIsShorterThanTreeDepth() {
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(0);
+
+        PathWithGivenSequence pathWithGivenSequence = new PathWithGivenSequence();
+        Assertions.assertFalse(pathWithGivenSequence.findPath(root, new int[]{1}));
     }
 }

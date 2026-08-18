@@ -13,6 +13,10 @@ import java.util.PriorityQueue;
 public class MergeKSortedLists {
 
     public ListNode<Integer> merge(ListNode<Integer>[] lists) {
+        if (lists == null || lists.length == 0) {
+            return null;
+        }
+
         ListNode<Integer> resultHead = null;
         ListNode<Integer> resultTail = null;
         PriorityQueue<ListNode<Integer>> minHeap = new PriorityQueue<>((o1, o2) -> o1.data - o2.data);

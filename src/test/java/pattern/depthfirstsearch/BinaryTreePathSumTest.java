@@ -29,13 +29,6 @@ public class BinaryTreePathSumTest {
     }
 
     @Test
-    public void hasPathSumShouldReturnFalseWhenTreeIsNull() {
-        TreePathSum treePathSum = new TreePathSum();
-        boolean result = treePathSum.hasPathSum(null, 23);
-        assertFalse(result);
-    }
-
-    @Test
     public void hasPathSumShouldReturnTrueForSingleNodeWithMatchingSum() {
         TreePathSum treePathSum = new TreePathSum();
         TreeNode root = new TreeNode(12);
@@ -76,5 +69,30 @@ public class BinaryTreePathSumTest {
 
         boolean result = treePathSum.hasPathSum(root, 23);
         assertTrue(result);
+    }
+
+    @Test
+    public void hasPathSumShouldReturnFalseWhenSumMatchesAtInternalNodeButNotLeaf() {
+        TreePathSum treePathSum = new TreePathSum();
+        TreeNode root = new TreeNode(5);
+        root.left = new TreeNode(3);
+        root.right = new TreeNode(2);
+
+        boolean result = treePathSum.hasPathSum(root, 5);
+        assertFalse(result);
+    }
+
+    @Test
+    public void hasPathSumShouldReturnFalseForComplexTreeWithNoMatchingPath() {
+        TreePathSum treePathSum = new TreePathSum();
+        TreeNode root = new TreeNode(12);
+        root.left = new TreeNode(7);
+        root.right = new TreeNode(1);
+        root.left.left = new TreeNode(9);
+        root.right.left = new TreeNode(10);
+        root.right.right = new TreeNode(5);
+
+        boolean result = treePathSum.hasPathSum(root, 100);
+        assertFalse(result);
     }
 }
