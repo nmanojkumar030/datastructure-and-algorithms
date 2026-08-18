@@ -48,4 +48,10 @@ public class AnagramSortTest {
         assertFalse(AnagramSort.IsAnagram("Hello", "hello"));
         assertFalse(AnagramSort.IsAnagram("World", "world"));
     }
+
+    @Test
+    public void testIsAnagram_SingleCharacterStrings() {
+        assertTrue(AnagramSort.IsAnagram("a", "a"));
+        assertFalse(AnagramSort.IsAnagram("a", "b"));
+    }
 }

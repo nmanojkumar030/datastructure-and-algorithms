@@ -15,15 +15,8 @@ public class AnagramFinder {
     static void main(String[] args) {
         List<String> input = Arrays.asList("cat", "dog", "god", "cat");
 
-        // Lambda function to group anagrams
-        AnagramGrouper grouper = (words) -> words.stream()
-                .collect(Collectors.groupingBy(
-                        word -> {
-                            char[] chars = word.toLowerCase().toCharArray();
-                            Arrays.sort(chars);
-                            return new String(chars);
-                        }
-                ));
+        // Method reference to group anagrams
+        AnagramGrouper grouper = AnagramFinder::groupAnagrams;
 
         // Get grouped anagrams
         Map<String, List<String>> grouped = grouper.group(input);
@@ -48,5 +41,16 @@ public class AnagramFinder {
         result = new ArrayList<>(grouped.values());
         System.out.println("\nInput: " + test3);
         System.out.println("Output: " + result);
+    }
+
+    public static Map<String, List<String>> groupAnagrams(List<String> words) {
+        return words.stream()
+                .collect(Collectors.groupingBy(
+                        word -> {
+                            char[] chars = word.toLowerCase().toCharArray();
+                            Arrays.sort(chars);
+                            return new String(chars);
+                        }
+                ));
     }
 }

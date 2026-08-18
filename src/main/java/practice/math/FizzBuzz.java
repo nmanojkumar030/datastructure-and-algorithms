@@ -21,16 +21,20 @@ public class FizzBuzz {
 
         for (int i = 0; i < array.length; i++) {
             for (int j = 1; j <= array[i]; j++) {
-                if ((j % 3 == 0) && (j % 5 == 0)) {
-                    System.out.println("FizzBuzz");
-                } else if ((j % 3 == 0)) {
-                    System.out.println("Fizz");
-                } else if ((j % 5 == 0)) {
-                    System.out.println("Buzz");
-                } else {
-                    System.out.println(j);
-                }
+                System.out.println(fizzBuzzValue(j));
             }
+        }
+    }
+
+    public static String fizzBuzzValue(int number) {
+        if ((number % 3 == 0) && (number % 5 == 0)) {
+            return "FizzBuzz";
+        } else if (number % 3 == 0) {
+            return "Fizz";
+        } else if (number % 5 == 0) {
+            return "Buzz";
+        } else {
+            return String.valueOf(number);
         }
     }
 }

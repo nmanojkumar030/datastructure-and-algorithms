@@ -31,4 +31,26 @@ class MaxCurrencyValueTest {
         MaxCurrencyValue maxCurrencyValue = new MaxCurrencyValue();
         assertThrows(IllegalArgumentException.class, () -> maxCurrencyValue.findMax(List.of()));
     }
+
+    @Test
+    public void shouldThrowExceptionWhenListIsNull() {
+        MaxCurrencyValue maxCurrencyValue = new MaxCurrencyValue();
+        assertThrows(NullPointerException.class, () -> maxCurrencyValue.findMax(null));
+    }
+
+    @Test
+    public void shouldReturnTheTiedMaxValueWhenDuplicateMaxExists() {
+        List<Double> currencyList = Arrays.asList(50.0, 99.0, 99.0, 20.0);
+
+        MaxCurrencyValue maxCurrencyValue = new MaxCurrencyValue();
+        assertEquals(99.0, maxCurrencyValue.findMax(currencyList));
+    }
+
+    @Test
+    public void shouldReturnMaxValueWhenAllValuesAreNegative() {
+        List<Double> currencyList = Arrays.asList(-12.5, -3.75, -45.2);
+
+        MaxCurrencyValue maxCurrencyValue = new MaxCurrencyValue();
+        assertEquals(-3.75, maxCurrencyValue.findMax(currencyList));
+    }
 }

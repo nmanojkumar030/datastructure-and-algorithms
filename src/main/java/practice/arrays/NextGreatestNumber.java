@@ -30,7 +30,7 @@ public class NextGreatestNumber {
         }
     }
 
-    private static Map<Integer, Integer> findNextGreatestNumbersWithNestedLoops(Integer[] integers) {
+    public static Map<Integer, Integer> findNextGreatestNumbersWithNestedLoops(Integer[] integers) {
         Map<Integer, Integer> greatestNumberMap = new HashMap<>();
         for (int i = 0; i < integers.length; i++) {
             for (int j = i + 1; j < integers.length; j++) {
@@ -72,7 +72,7 @@ public class NextGreatestNumber {
      * Stack 8
      * end of array, 8 - -1
      */
-    private static Map<Integer, Integer> findNextGreatestNumbersWithStack(Integer[] integers) {
+    public static Map<Integer, Integer> findNextGreatestNumbersWithStack(Integer[] integers) {
         Map<Integer, Integer> greatestNumberMap = new HashMap<>();
         Stack<Integer> stack = new Stack<>();
         stack.push(integers[0]);

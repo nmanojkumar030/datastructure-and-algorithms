@@ -11,7 +11,7 @@ public class SecondSmallestNumber {
         System.out.println(findSecondSmallestNumberWithHeap(inputArray));
     }
 
-    private static int findSecondSmallestNumber(int[] inputArray) {
+    public static int findSecondSmallestNumber(int[] inputArray) {
         int smallest = Integer.MAX_VALUE;
         int secondSmallest = Integer.MAX_VALUE;
 
@@ -27,11 +27,11 @@ public class SecondSmallestNumber {
         return (secondSmallest == Integer.MAX_VALUE) ? -1 : secondSmallest;
     }
 
-    private static int findSecondSmallestNumberWithSorting(int[] inputArray) {
+    public static int findSecondSmallestNumberWithSorting(int[] inputArray) {
         return java.util.Arrays.stream(inputArray).sorted().skip(1).findFirst().orElse(-1);
     }
 
-    private static int findSecondSmallestNumberWithHeap(int[] inputArray) {
+    public static int findSecondSmallestNumberWithHeap(int[] inputArray) {
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         for (int i = 0; i < inputArray.length; i++) {
             minHeap.offer(inputArray[i]);

@@ -12,22 +12,28 @@ public class TrailingZeros {
         int n = Integer.parseInt(line);
 
         if (n >= 1 && n <= 1000) {
-            long fact = 1;
-            while (n > 1) {
-                fact = fact * n;
-                System.out.println(fact);
-                n--;
-            }
+            long fact = factorial(n);
             System.out.println(fact);
-            int trailingZeros = 0;
-            while (fact > 10) {
-                if (fact % 10 == 0) {
-                    trailingZeros++;
-                }
-                fact = fact / 10;
-            }
-            System.out.println(trailingZeros);
+            System.out.println(countTrailingZeros(fact));
         }
+    }
+
+    public static long factorial(int n) {
+        long fact = 1;
+        while (n > 1) {
+            fact = fact * n;
+            n--;
+        }
+        return fact;
+    }
+
+    public static int countTrailingZeros(long fact) {
+        int trailingZeros = 0;
+        while (fact > 0 && fact % 10 == 0) {
+            trailingZeros++;
+            fact = fact / 10;
+        }
+        return trailingZeros;
     }
 
 }

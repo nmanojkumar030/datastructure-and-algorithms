@@ -30,6 +30,10 @@ public class CountUniqueElements {
     public long countUniqueUsingManualMethod(List<Integer> integerList) {
         List<Integer> sortedList = integerList.stream().sorted().toList();
 
+        if (sortedList.isEmpty()) {
+            return 0;
+        }
+
         int uniqueCount = 1;
         for (int i = 1; i < sortedList.size(); i++) {
             if (!sortedList.get(i).equals(sortedList.get(i - 1))) {
