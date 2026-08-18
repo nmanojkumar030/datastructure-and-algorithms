@@ -42,5 +42,25 @@ public class LevelOrderTraversalTest {
         assertTrue(result.get(2).get(0).val == 9);
         assertTrue(result.get(2).get(1).val == 10);
         assertTrue(result.get(2).get(2).val == 5);
+        assertEquals(3, result.size());
+        assertEquals(1, result.get(0).size());
+        assertEquals(2, result.get(1).size());
+        assertEquals(3, result.get(2).size());
+    }
+
+    @Test
+    public void testLeftSkewedTree() {
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.left.left = new TreeNode(3);
+
+        LevelOrderTraversal levelOrderTraversal = new LevelOrderTraversal();
+        List<List<TreeNode>> result = levelOrderTraversal.traverse(root);
+
+        assertEquals(3, result.size());
+        assertEquals(1, result.get(0).size());
+        assertEquals(1, result.get(1).size());
+        assertEquals(1, result.get(2).size());
+        assertTrue(result.get(2).get(0).val == 3);
     }
 }

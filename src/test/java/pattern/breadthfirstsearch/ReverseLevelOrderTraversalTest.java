@@ -40,6 +40,25 @@ class ReverseLevelOrderTraversalTest {
         assertTrue(result.get(1).get(0).val == 7);
         assertTrue(result.get(1).get(1).val == 1);
         assertTrue(result.get(2).get(0).val == 12);
+        assertEquals(3, result.size());
+        assertEquals(3, result.get(0).size());
+        assertEquals(2, result.get(1).size());
+        assertEquals(1, result.get(2).size());
+    }
+
+    @Test
+    public void testRightSkewedTree() {
+        TreeNode root = new TreeNode(1);
+        root.right = new TreeNode(2);
+        root.right.right = new TreeNode(3);
+
+        ReverseLevelOrderTraversal reverseLevelOrderTraversal = new ReverseLevelOrderTraversal();
+        List<List<TreeNode>> result = reverseLevelOrderTraversal.traverse(root);
+
+        assertEquals(3, result.size());
+        assertTrue(result.get(0).get(0).val == 3);
+        assertTrue(result.get(1).get(0).val == 2);
+        assertTrue(result.get(2).get(0).val == 1);
     }
 
 }
