@@ -44,7 +44,11 @@ public class ReverseSubList {
             currentNode = nextNode;
         }
 
-        pMinusOneNode.setNext(previousNode);
+        if (pMinusOneNode != null) {
+            pMinusOneNode.setNext(previousNode);
+        } else {
+            head = previousNode;
+        }
         endOfSubList.setNext(currentNode);
         return head;
     }

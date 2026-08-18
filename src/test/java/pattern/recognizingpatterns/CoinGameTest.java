@@ -3,6 +3,7 @@ package pattern.recognizingpatterns;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CoinGameTest {
 
@@ -58,5 +59,25 @@ public class CoinGameTest {
         String currentPlayer = "them";
         String gameWinner = coinGame.gameWinner(numberOfCoins, currentPlayer);
         assertEquals("you", gameWinner);
+    }
+
+    @Test
+    public void testGameWinner_threeCoins_currentPlayerYou() {
+        CoinGame coinGame = new CoinGame();
+        String gameWinner = coinGame.gameWinner(3, "you");
+        assertEquals("you", gameWinner);
+    }
+
+    @Test
+    public void testGameWinner_threeCoins_currentPlayerThem() {
+        CoinGame coinGame = new CoinGame();
+        String gameWinner = coinGame.gameWinner(3, "them");
+        assertEquals("you", gameWinner);
+    }
+
+    @Test
+    public void testGameWinner_throwsForUnknownPlayer() {
+        CoinGame coinGame = new CoinGame();
+        assertThrows(IllegalArgumentException.class, () -> coinGame.gameWinner(3, "someone"));
     }
 }

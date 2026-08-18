@@ -18,12 +18,11 @@ public class CoinGame {
     }
 
     private String switchPlayersTurn(String currentPlayer) {
-        String nextPlayer = null;
         if (currentPlayer.equalsIgnoreCase("you")) {
-            nextPlayer = "them";
+            return "them";
         } else if (currentPlayer.equalsIgnoreCase("them")) {
-            nextPlayer = "you";
+            return "you";
         }
-        return nextPlayer;
+        throw new IllegalArgumentException("Unknown player: " + currentPlayer);
     }
 }
