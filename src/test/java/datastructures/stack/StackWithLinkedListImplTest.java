@@ -31,6 +31,21 @@ public class StackWithLinkedListImplTest {
     }
 
     @Test
+    public void peekOnEmptyThrowsException() {
+        StackWithLinkedListImpl<String> s = new StackWithLinkedListImpl<>();
+        assertThrows(Exception.class, s::peek);
+    }
+
+    @Test
+    public void singlePushThenPopReturnsToEmpty() throws Exception {
+        StackWithLinkedListImpl<Integer> s = new StackWithLinkedListImpl<>();
+        s.push(1);
+
+        assertEquals(Integer.valueOf(1), s.pop());
+        assertTrue(s.isEmpty());
+    }
+
+    @Test
     public void genericsAndNulls() throws Exception {
         StackWithLinkedListImpl<Integer> s = new StackWithLinkedListImpl<>();
         s.push(10);

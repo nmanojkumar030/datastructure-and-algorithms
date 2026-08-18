@@ -15,7 +15,7 @@ public class StackWithArrayImpl<E> {
     }
 
     public void push(E x) throws Exception {
-        if (top == MAX_CAPACITY) {
+        if (top == MAX_CAPACITY - 1) {
             throw new Exception("Stack Overflow Error");
         } else {
             data[++top] = x;
@@ -38,7 +38,7 @@ public class StackWithArrayImpl<E> {
     }
 
     public int size() {
-        return top;
+        return top + 1;
     }
 
     public boolean isEmpty() {

@@ -61,9 +61,11 @@ public class LinkedList<E> {
     }
 
     public void removeFromBegin() {
-        Node<E> temp = head.getNextPointer();
-        temp = head;
-        temp.setNextPointer(null);
+        if (head == null) {
+            return;
+        }
+        head = head.getNextPointer();
+        length--;
     }
 
     /**

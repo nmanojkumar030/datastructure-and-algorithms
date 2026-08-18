@@ -45,4 +45,46 @@ public class StackWithArrayImplTest {
         assertNull(s.pop());
         assertTrue(s.isEmpty());
     }
+
+    @Test
+    public void popOnEmptyStackThrowsException() {
+        StackWithArrayImpl<String> s = new StackWithArrayImpl<>();
+        assertThrows(Exception.class, s::pop);
+    }
+
+    @Test
+    public void peekOnEmptyStackThrowsException() {
+        StackWithArrayImpl<String> s = new StackWithArrayImpl<>();
+        assertThrows(Exception.class, s::peek);
+    }
+
+    @Test
+    public void sizeReflectsNumberOfElements() throws Exception {
+        StackWithArrayImpl<Integer> s = new StackWithArrayImpl<>();
+        assertEquals(0, s.size());
+
+        s.push(1);
+        s.push(2);
+        s.push(3);
+        assertEquals(3, s.size());
+
+        s.pop();
+        assertEquals(2, s.size());
+
+        s.pop();
+        s.pop();
+        assertEquals(0, s.size());
+    }
+
+    @Test
+    public void isEmptyTransitionsCorrectlyMidSequence() throws Exception {
+        StackWithArrayImpl<Integer> s = new StackWithArrayImpl<>();
+        assertTrue(s.isEmpty());
+
+        s.push(1);
+        assertFalse(s.isEmpty());
+
+        s.pop();
+        assertTrue(s.isEmpty());
+    }
 }
