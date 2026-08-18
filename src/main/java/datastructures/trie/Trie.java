@@ -32,7 +32,7 @@ public class Trie {
     }
 
 
-    private static class TrieNode<E> {
+    static class TrieNode<E> {
         boolean isEndOfWord = false;
         TrieNode[] trieNodes = new TrieNode[26];
 
