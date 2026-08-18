@@ -20,4 +20,18 @@ public class AverageOfSubArrayOfSizeKTest {
         double[] result = averageOfSubArrayOfSizeK.findAverageOfSubArrayOfSizeK(new int[]{1, 3, 2, 6, -1, 4, 1, 8, 2}, 5);
         assertArrayEquals(new double[]{2.2, 2.8, 2.4, 3.6, 2.8}, result, 0);
     }
+
+    @Test
+    public void testFindAverage_usingBruteForce() {
+        AverageOfSubArrayOfSizeK averageOfSubArrayOfSizeK = new AverageOfSubArrayOfSizeK();
+        double[] result = averageOfSubArrayOfSizeK.findAverageUsingBruteForce(new int[]{1, 3, 2, 6, -1, 4, 1, 8, 2}, 5);
+        assertArrayEquals(new double[]{2.2, 2.8, 2.4, 3.6, 2.8}, result, 0);
+    }
+
+    @Test
+    public void testFindAverage_usingSlidingWindowVariant() {
+        AverageOfSubArrayOfSizeK averageOfSubArrayOfSizeK = new AverageOfSubArrayOfSizeK();
+        double[] result = averageOfSubArrayOfSizeK.findAverageUsingSlidingWindow1(new int[]{1, 3, 2, 6, -1, 4, 1, 8, 2}, 5);
+        assertArrayEquals(new double[]{2.2, 2.8, 2.4, 3.6, 2.8}, result, 0);
+    }
 }

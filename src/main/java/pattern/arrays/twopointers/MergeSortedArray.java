@@ -15,5 +15,9 @@ public class MergeSortedArray {
                 nums1[resultPointer--] = nums2[pointer2--];
             }
         }
+
+        while (pointer2 >= 0) {
+            nums1[resultPointer--] = nums2[pointer2--];
+        }
     }
 }

@@ -144,4 +144,33 @@ public class PairWithTargetSumTest {
         assertEquals(2, result[0]);
         assertEquals(3, result[1]);
     }
+
+    // No-match cases: all four methods default to [0, 0] when no pair sums to the target.
+    @Test
+    public void testBruteForceWhenNoPairMatchesTarget() {
+        int[] result = pairWithTargetSum.searchUsingBruteForce(new int[]{1, 2, 3}, 100);
+        assertEquals(0, result[0]);
+        assertEquals(0, result[1]);
+    }
+
+    @Test
+    public void testBinarySearchWhenNoPairMatchesTarget() {
+        int[] result = pairWithTargetSum.searchUsingBinarySearch(new int[]{1, 2, 3}, 100);
+        assertEquals(0, result[0]);
+        assertEquals(0, result[1]);
+    }
+
+    @Test
+    public void testTwoPointersWhenNoPairMatchesTarget() {
+        int[] result = pairWithTargetSum.searchUsingTwoPointers(new int[]{1, 2, 3}, 100);
+        assertEquals(0, result[0]);
+        assertEquals(0, result[1]);
+    }
+
+    @Test
+    public void testHashTableWhenNoPairMatchesTarget() {
+        int[] result = pairWithTargetSum.searchUsingHashTable(new int[]{1, 2, 3}, 100);
+        assertEquals(0, result[0]);
+        assertEquals(0, result[1]);
+    }
 }

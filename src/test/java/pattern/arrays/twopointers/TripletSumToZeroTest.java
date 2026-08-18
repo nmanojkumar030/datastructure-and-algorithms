@@ -54,4 +54,40 @@ class TripletSumToZeroTest {
         assertNotNull(result);
         assertTrue(result.size() == 4);
     }
+
+    @Test
+    void shouldFindTripletsUsingNestedLoops() {
+        TripletSumToZero tripletSumToZero = new TripletSumToZero();
+        List<List<Integer>> result = tripletSumToZero.threeSumWithNestedLoops(new int[]{-3, 0, 1, 2, -1, 1, -2});
+
+        // Unlike threeSum(), this method does not dedupe by value, so it returns every
+        // index-distinct (i<j<k) triplet whose sum is zero, including value-permutations.
+        assertNotNull(result);
+        assertTrue(result.size() == 6);
+    }
+
+    @Test
+    void shouldReturnEmptyListUsingNestedLoopsWhenArrayHasInsufficientElements() {
+        TripletSumToZero tripletSumToZero = new TripletSumToZero();
+        List<List<Integer>> result = tripletSumToZero.threeSumWithNestedLoops(new int[]{-3, 0});
+
+        assertNotNull(result);
+        assertTrue(result.isEmpty());
+    }
+
+    @Test
+    void shouldFindTripletsUsingStaticSearchTriplets() {
+        List<List<Integer>> result = TripletSumToZero.searchTriplets(new int[]{-3, 0, 1, 2, -1, 1, -2});
+
+        assertNotNull(result);
+        assertTrue(result.size() == 4);
+    }
+
+    @Test
+    void shouldFindTwoTripletsUsingStaticSearchTriplets() {
+        List<List<Integer>> result = TripletSumToZero.searchTriplets(new int[]{-5, 2, -1, -2, 3});
+
+        assertNotNull(result);
+        assertTrue(result.size() == 2);
+    }
 }

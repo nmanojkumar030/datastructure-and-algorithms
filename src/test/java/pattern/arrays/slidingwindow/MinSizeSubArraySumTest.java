@@ -27,4 +27,18 @@ public class MinSizeSubArraySumTest {
         int minArraySize = minSizeSubArraySum.findMinSubArray(new int[]{3, 4, 1, 1, 6}, 8);
         assertEquals(3, minArraySize);
     }
+
+    @Test
+    public void testFindMinSubArrayReturnsZeroWhenNoSubArrayMatches() {
+        MinSizeSubArraySum minSizeSubArraySum = new MinSizeSubArraySum();
+        int minArraySize = minSizeSubArraySum.findMinSubArray(new int[]{1, 1, 1}, 10);
+        assertEquals(0, minArraySize);
+    }
+
+    @Test
+    public void testFindMinSubArrayWithSingleElementMeetingTarget() {
+        MinSizeSubArraySum minSizeSubArraySum = new MinSizeSubArraySum();
+        int minArraySize = minSizeSubArraySum.findMinSubArray(new int[]{7}, 7);
+        assertEquals(1, minArraySize);
+    }
 }

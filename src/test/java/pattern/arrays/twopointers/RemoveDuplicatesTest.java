@@ -41,4 +41,45 @@ public class RemoveDuplicatesTest {
         RemoveDuplicates removeDuplicates = new RemoveDuplicates();
         assertEquals(5, removeDuplicates.removeDuplicatesFromSortedArray(nums));
     }
+
+    @Test
+    public void testRemoveDuplicatesFromSortedArrayReturnsMinusOneForEmptyArray() {
+        int[] nums = new int[]{};
+        RemoveDuplicates removeDuplicates = new RemoveDuplicates();
+        assertEquals(-1, removeDuplicates.removeDuplicatesFromSortedArray(nums));
+    }
+
+    @Test
+    public void testRemoveDuplicatesFromSortedArrayReturnsMinusOneForNullArray() {
+        RemoveDuplicates removeDuplicates = new RemoveDuplicates();
+        assertEquals(-1, removeDuplicates.removeDuplicatesFromSortedArray(null));
+    }
+
+    @Test
+    public void testRemoveDuplicatesFromSortedArrayWithSingleElement() {
+        int[] nums = new int[]{5};
+        RemoveDuplicates removeDuplicates = new RemoveDuplicates();
+        assertEquals(1, removeDuplicates.removeDuplicatesFromSortedArray(nums));
+    }
+
+    @Test
+    public void testRemoveDuplicatesFromSortedArrayWithAllDuplicates() {
+        int[] nums = new int[]{2, 2, 2};
+        RemoveDuplicates removeDuplicates = new RemoveDuplicates();
+        assertEquals(1, removeDuplicates.removeDuplicatesFromSortedArray(nums));
+    }
+
+    @Test
+    public void testRemoveWithSingleElement() {
+        int[] nums = new int[]{5};
+        RemoveDuplicates removeDuplicates = new RemoveDuplicates();
+        assertEquals(1, removeDuplicates.remove(nums));
+    }
+
+    @Test
+    public void testRemoveWithAllDuplicates() {
+        int[] nums = new int[]{2, 2, 2};
+        RemoveDuplicates removeDuplicates = new RemoveDuplicates();
+        assertEquals(1, removeDuplicates.remove(nums));
+    }
 }
