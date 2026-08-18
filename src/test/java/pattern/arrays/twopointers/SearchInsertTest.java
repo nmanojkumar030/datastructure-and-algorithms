@@ -41,4 +41,32 @@ public class SearchInsertTest {
         int result = searchInsert.searchInsertUsingBinarySearch(new int[]{1}, 0);
         assertEquals(0, result);
     }
+
+    @Test
+    public void testLinearSearchInsertFound() {
+        SearchInsert searchInsert = new SearchInsert();
+        int result = searchInsert.searchInsert(new int[]{1, 3, 5, 6}, 5);
+        assertEquals(2, result);
+    }
+
+    @Test
+    public void testLinearSearchInsertBetweenElements() {
+        SearchInsert searchInsert = new SearchInsert();
+        int result = searchInsert.searchInsert(new int[]{1, 3, 5, 6}, 2);
+        assertEquals(1, result);
+    }
+
+    @Test
+    public void testLinearSearchInsertPastEnd() {
+        SearchInsert searchInsert = new SearchInsert();
+        int result = searchInsert.searchInsert(new int[]{1, 3, 5, 6}, 7);
+        assertEquals(4, result);
+    }
+
+    @Test
+    public void testLinearSearchInsertBeforeStart() {
+        SearchInsert searchInsert = new SearchInsert();
+        int result = searchInsert.searchInsert(new int[]{1, 3, 5, 6}, 0);
+        assertEquals(0, result);
+    }
 }

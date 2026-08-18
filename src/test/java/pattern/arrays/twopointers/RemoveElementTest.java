@@ -22,4 +22,28 @@ public class RemoveElementTest {
         int result = element.remove(nums, 2);
         assertEquals(5, result);
     }
+
+    @Test
+    public void testRemoveElementNotPresentInArray() {
+        int[] nums = new int[]{1, 2, 3};
+        RemoveElement element = new RemoveElement();
+        int result = element.remove(nums, 5);
+        assertEquals(3, result);
+    }
+
+    @Test
+    public void testRemoveElementWhenAllElementsMatchVal() {
+        int[] nums = new int[]{4, 4, 4};
+        RemoveElement element = new RemoveElement();
+        int result = element.remove(nums, 4);
+        assertEquals(0, result);
+    }
+
+    @Test
+    public void testRemoveElementWithEmptyArray() {
+        int[] nums = new int[]{};
+        RemoveElement element = new RemoveElement();
+        int result = element.remove(nums, 1);
+        assertEquals(0, result);
+    }
 }

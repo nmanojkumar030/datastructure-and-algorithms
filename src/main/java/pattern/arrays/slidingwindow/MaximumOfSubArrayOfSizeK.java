@@ -3,7 +3,7 @@ package pattern.arrays.slidingwindow;
 public class MaximumOfSubArrayOfSizeK {
     // Brute Force Method O(N2)
     public int findMaxSumOfSubArray1(int[] inputArray, int subArrayWidth) {
-        int maxSum = 0;
+        int maxSum = Integer.MIN_VALUE;
         for (int i = 0; i < (inputArray.length - subArrayWidth + 1); i++) {
             int sum = 0;
             for (int j = i; j < (i + subArrayWidth); j++) {
@@ -16,7 +16,7 @@ public class MaximumOfSubArrayOfSizeK {
 
     // Sliding Window O(N)
     public int findMaxSumOfSubArray(int[] inputArray, int subArrayWidth) {
-        int maxSum = 0;
+        int maxSum = Integer.MIN_VALUE;
         int windowSum = 0;
         int windowStart = 0;
         for (int windowEnd = 0; windowEnd < inputArray.length; windowEnd++) {
@@ -31,7 +31,7 @@ public class MaximumOfSubArrayOfSizeK {
     }
 
     public int findMaxSumOfSubArray2(int[] inputArray, int subArrayWidth) {
-        int maxSum = 0;
+        int maxSum = Integer.MIN_VALUE;
         int windowSum = 0;
         int windowStart = 0;
         for (int windowEnd = 0; windowEnd < inputArray.length; windowEnd++) {

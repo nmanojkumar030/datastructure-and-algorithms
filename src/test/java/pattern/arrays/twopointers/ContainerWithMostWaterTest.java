@@ -34,4 +34,18 @@ public class ContainerWithMostWaterTest {
         int result = containerWithMostWater.maxArea(new int[]{1, 2, 1});
         assertEquals(2, result);
     }
+
+    @Test
+    public void testMaxAreaBruteForce() {
+        ContainerWithMostWater containerWithMostWater = new ContainerWithMostWater();
+        int result = containerWithMostWater.maxArea1(new int[]{1, 8, 6, 2, 5, 4, 8, 3, 7});
+        assertEquals(49, result);
+    }
+
+    @Test
+    public void testMaxAreaBruteForceWithEqualHeights() {
+        ContainerWithMostWater containerWithMostWater = new ContainerWithMostWater();
+        int result = containerWithMostWater.maxArea1(new int[]{4, 4, 4, 4});
+        assertEquals(12, result);
+    }
 }

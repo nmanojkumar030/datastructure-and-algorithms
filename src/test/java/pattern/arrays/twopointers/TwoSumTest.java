@@ -64,4 +64,31 @@ public class TwoSumTest {
         assertEquals(1, result[1]);
     }
 
+    @Test
+    public void shouldFindTwoNumbersUsingMapsWithSmallTarget() throws Exception {
+        TwoSum twoSum = new TwoSum();
+        int[] result = twoSum.twoSumUsingMaps(new int[]{2, 7, 11, 15}, 9);
+
+        assertEquals(0, result[0]);
+        assertEquals(1, result[1]);
+    }
+
+    @Test
+    public void shouldFindTwoNumbersUsingMapsWithLargeTarget() throws Exception {
+        TwoSum twoSum = new TwoSum();
+        int[] result = twoSum.twoSumUsingMaps(new int[]{2, 7, 11, 15}, 26);
+
+        assertEquals(2, result[0]);
+        assertEquals(3, result[1]);
+    }
+
+    @Test
+    public void shouldFindTwoIdenticalNumbersUsingMaps() throws Exception {
+        TwoSum twoSum = new TwoSum();
+        int[] result = twoSum.twoSumUsingMaps(new int[]{3, 3}, 6);
+
+        assertEquals(0, result[0]);
+        assertEquals(1, result[1]);
+    }
+
 }
