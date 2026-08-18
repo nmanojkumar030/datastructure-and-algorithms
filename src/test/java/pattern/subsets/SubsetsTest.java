@@ -52,4 +52,14 @@ public class SubsetsTest {
         assertTrue(result.contains(List.of()));
         assertTrue(result.contains(List.of(1)));
     }
+
+    @Test
+    public void testFindSubsetsWithDuplicateValues() {
+        List<List<Integer>> result = Subsets.findSubsets(Arrays.asList(1, 1));
+
+        assertEquals(4, result.size());
+        assertEquals(2, result.stream().filter(subset -> subset.equals(List.of(1))).count());
+        assertEquals(1, result.stream().filter(List::isEmpty).count());
+        assertEquals(1, result.stream().filter(subset -> subset.equals(List.of(1, 1))).count());
+    }
 }
