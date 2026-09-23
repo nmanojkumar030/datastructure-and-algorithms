@@ -1,5 +1,7 @@
 # CLAUDE.md
 
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
 ## Project
 
 Java DSA practice repo. Problems are organised into three top-level categories under `src/main/java/`:
@@ -14,8 +16,10 @@ Tests mirror the same package structure under `src/test/java/`.
 ## Build & Test
 
 ```bash
-mvn compile       # compile only
-mvn test          # run all tests
+mvn compile                                  # compile only
+mvn test                                     # run all tests
+mvn test -Dtest=ClassNameTest                # run a single test class
+mvn test -Dtest=ClassNameTest#methodName     # run a single test method
 ```
 
 ## Conventions
